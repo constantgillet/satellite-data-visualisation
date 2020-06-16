@@ -1,0 +1,26 @@
+@import './parts/reset.scss';
+
+$primaryColor: #8E75F9;
+$lightColor: #FFFFFF;
+$darkColor: #373B53;
+
+body {
+    font-family: 'Monserrat';
+}
+
+h1, h2, h3, a, label, ul, li {
+    color: $darkColor;
+    text-decoration: none;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 44px;
+}
+
+.container {
+    width: 1041px;
+    margin: 0 auto;
+}
+
+@import './parts/fonts.scss';

@@ -8,7 +8,9 @@ $mainShadow: 1px 1px 6px #7FE7F1;
 
 body {
     font-family: 'Roboto';
+    overflow: hidden;
     background: black;
+    cursor: url('/images/cursor.png'), auto;	
 }
 
 h1, h2, h3, a, label, ul, li {
@@ -27,8 +29,11 @@ h1 {
     text-align: center;
 }
 
-.container {
-    width: 1041px;
-    margin: 0 auto;
+
+main {
+    height: 100vh;
+    background: linear-gradient(0deg, rgba(6, 4, 36, 0.85), rgba(6, 4, 36, 0.85)), url('/images/background.jpg');
+    background-size: cover;
+    background-position: center;
 }
 

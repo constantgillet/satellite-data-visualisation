@@ -1,21 +1,29 @@
 @import './parts/reset.scss';
+@import './parts/fonts.scss';
 
-$primaryColor: #8E75F9;
+$primaryColor: #BEF9FF;
 $lightColor: #FFFFFF;
 $darkColor: #373B53;
+$mainShadow: 1px 1px 6px #7FE7F1;
 
 body {
-    font-family: 'Monserrat';
+    font-family: 'Roboto';
+    background: black;
 }
 
 h1, h2, h3, a, label, ul, li {
-    color: $darkColor;
+    color: $primaryColor;
     text-decoration: none;
+    text-shadow: $mainShadow;
 }
 
 h1 {
-    font-weight: bold;
-    font-size: 44px;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 40px;
+    line-height: 129.6%;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
 }
 
 .container {
@@ -23,4 +31,3 @@ h1 {
     margin: 0 auto;
 }
 
-@import './parts/fonts.scss';

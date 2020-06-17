@@ -15,8 +15,9 @@ body {
     cursor: url('/images/cursor.png'), auto;	
 }
 
-h1, h2, h3, a, label, ul, li {
+h1, h2, h3, a, label, ul, li, p {
     color: $primaryColor;
+    font-weight: 400;
     text-decoration: none;
     text-shadow: $mainShadow;
 }
@@ -52,7 +53,7 @@ main {
 
 .container {
     height: 92%;
-    width: 92%;
+    width: 93%;
     position: relative;
 }
 

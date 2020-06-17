@@ -1,8 +1,22 @@
 import './style/main.scss'
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
+import Filters from './scripts/Filters'
 
-<<<<<<< HEAD
+//On demande les satellites depuis l'API
+
+//On applique les mets sur les filtres
+const filters = new Filters(document.querySelector('.filters'))
+
+//On met les petits points de satellites dans la div
+
+//let filtredSatellites = []
+
+//Filters
+////Si on change les filtres alors on update les objects "Graphiques" ex chartPurposes.update(satellites)
+
+//On gènère les graphiques avec le tableau d'objects satellites
+////Dans les objets lors du survol d'un 
 
 /**
  * Scene
@@ -77,30 +91,3 @@ const loop = () =>
     cameraControls.update()
     renderer.render(scene, camera)
 }
-
-const test = document.addEventListener('click', () =>
-{
-    console.log('segpa');
-    
-})
-=======
-//Import objects
-import Filters from './scripts/Filters'
-
-console.log('Hello Webpack')
->>>>>>> c965c66741929bc7bc5db028e1fcbeedd777fdf2
-
-//On demande les satellites depuis l'API
-
-//On applique les mets sur les filtres
-const filters = new Filters(document.querySelector('.filters'))
-
-//On met les petits points de satellites dans la div
-
-//let filtredSatellites = []
-
-//Filters
-////Si on change les filtres alors on update les objects "Graphiques" ex chartPurposes.update(satellites)
-
-//On gènère les graphiques avec le tableau d'objects satellites
-////Dans les objets lors du survol d'un 

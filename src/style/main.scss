@@ -26,6 +26,11 @@ h1, h2, h3, a, label, ul, li, p {
     text-shadow: $mainShadow;
 }
 
+.filters__select-inputa, button, input, li, ul, option:hover{
+    cursor: url('/images/cursor1.png'), pointer;
+  
+}
+
 h1 {
     font-style: normal;
     font-weight: 300;

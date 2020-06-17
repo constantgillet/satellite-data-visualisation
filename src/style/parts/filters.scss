@@ -1,6 +1,10 @@
 .filters {
     width: 276px;
 
+    &.active {
+        display: block;
+    }
+
     &__buttons {
         width: 100%;
         display: flex;
@@ -12,7 +16,7 @@
         border: 2px solid #4DC3CC;
         box-sizing: border-box;
         box-shadow: 0px 4px 9px rgba(127, 231, 241, 0.43);
-        border-radius: 0px 2px 2px 0px;
+        border-radius: 2px 2px 2px 2px;
         color: $primaryColor;
         font-weight: 300;
         font-size: 18px;
@@ -42,7 +46,7 @@
         border: 2px solid #4DC3CC;
         box-sizing: border-box;
         box-shadow: 0px 4px 9px rgba(127, 231, 241, 0.43);
-        border-radius: 0px 2px 2px 0px;
+        border-radius: 2px 2px 2px 2px;
         color: $primaryColor;
         font-weight: 300;
         font-size: 18px;
@@ -72,6 +76,18 @@
         
     }
 
+    &__form {
+        transform: translateX(-150%);
+        transition-property: transform;
+        transition-duration: 0.3s;
+        transition-timing-function: ease-in-out;
+        transition-delay: 0s;
+
+        &.active {
+            transform: translateX(0%);
+        }
+    }
+
     &__button {
         margin-top: 7px;
         width: 100%;
@@ -79,7 +95,7 @@
         border: 2px solid #4DC3CC;
         box-sizing: border-box;
         box-shadow: 0px 4px 9px rgba(127, 231, 241, 0.43);
-        border-radius: 0px 2px 2px 0px;
+        border-radius: 2px 2px 2px 2px;
         color: $primaryColor;
         font-weight: 300;
         font-size: 18px;
@@ -88,6 +104,12 @@
         vertical-align: middle;
         display: flex;
         justify-content: space-between;
+
+        &.active {
+            .extent-icon {
+                transform: rotate(90deg);
+            }
+        }
 
         &:hover {
             background: #277999;
@@ -105,4 +127,29 @@
             vertical-align: sub;
         }
     }
+
+    &__select-input {
+        display: none;
+        margin-top: 7px;
+        width: 100%;
+        background: #10698C;
+        border: 2px solid #4DC3CC;
+        box-sizing: border-box;
+        box-shadow: 0px 4px 9px rgba(127, 231, 241, 0.43);
+        border-radius: 2px 2px 2px 2px;
+        color: $primaryColor;
+        font-weight: 300;
+        font-size: 18px;
+        padding: 5px 7px;
+        text-transform: uppercase;
+        vertical-align: middle;
+
+        &.active {
+            display: block;
+        }
+
+        option {
+            font-weight: 300;
+        }
+    } 
 }

@@ -20,12 +20,18 @@ h1, h2, h3, a, label, ul, li {
 }
 
 h1 {
+    position: absolute;
+    width: 400px;
+    height: 121px;
+    left: 760px;
+    top: 10px;
     font-style: normal;
     font-weight: 300;
     font-size: 40px;
-    line-height: 129.6%;
+    line-height: 140%;
     letter-spacing: 0.04em;
     text-transform: uppercase;
+    text-align: center;
 }
 
 

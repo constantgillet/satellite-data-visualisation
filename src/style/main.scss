@@ -23,11 +23,6 @@ h1, h2, h3, a, label, ul, li {
 }
 
 h1 {
-    position: absolute;
-    width: 400px;
-    height: 121px;
-    left: 760px;
-    top: 10px;
     font-style: normal;
     font-weight: 300;
     font-size: 40px;
@@ -40,9 +35,17 @@ h1 {
 
 main {
     height: 100vh;
-    background: linear-gradient(0deg, rgba(6, 4, 36, 0.85), rgba(6, 4, 36, 0.85)), url('/images/background.jpg');
+    background: linear-gradient(0deg, rgba(6, 4, 36, 0.9), rgba(6, 4, 36, 0.9)), url('/images/background.jpg');
     background-size: cover;
     background-position: center;
+    
+}
+
+.square-background {
+    width: 100%;
+    height: 100%;
+    background: url('/images/square.png');
+    background-repeat: repeat;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -59,6 +62,10 @@ main {
     top: 0%;
     left: 50%;
     transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    line-height: 130%;
     
     &>span {
         font-size: 31px;

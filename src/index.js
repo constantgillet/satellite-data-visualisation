@@ -1,10 +1,14 @@
 import './style/main.scss'
 
+//Import objects
+import Filters from './scripts/Filters'
+
 console.log('Hello Webpack')
 
 //On demande les satellites depuis l'API
 
 //On applique les mets sur les filtres
+const filters = new Filters(document.querySelector('.filters'))
 
 //On met les petits points de satellites dans la div
 

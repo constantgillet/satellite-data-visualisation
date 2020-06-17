@@ -24,18 +24,19 @@ const filters = new Filters(document.querySelector('.filters'))
 const scene = new THREE.Scene()
 
 /**
+ * Sizes
+ */
+const sizes = {}
+sizes.width = window.innerWidth
+sizes.height = window.innerHeight
+
+/**
  * Camera
  */
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 20)
 camera.position.z = 12
 scene.add(camera)
 
-/**
- * Sizes
- */
-const sizes = {}
-sizes.width = window.innerWidth
-sizes.height = window.innerHeight
 
 /**
  * Cursor

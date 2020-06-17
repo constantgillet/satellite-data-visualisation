@@ -16,6 +16,10 @@ body {
     cursor: url('/images/cursor.png'), auto;	
 }
 
+button {
+    font-family: 'Roboto';
+}
+
 h1, h2, h3, a, label, ul, li, p {
     color: $primaryColor;
     font-weight: 400;

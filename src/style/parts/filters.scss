@@ -1,5 +1,5 @@
 .filters {
-    width: 288px;
+    width: 276px;
 
     &__buttons {
         width: 100%;
@@ -26,7 +26,7 @@
 
         &__icon {
             display: inline-block;
-            margin-left: 23px;
+            margin-left: 21px;
             width: 20px;
             height: 20px;
             background: url('/images/filters.png');
@@ -50,15 +50,58 @@
         text-transform: uppercase;
         vertical-align: middle;
 
+        &:hover {
+            background: #277999;
+        }
+
         &__icon {
             display: inline-block;
-            margin-left: 23px;
+            margin-left: 21px;
             width: 20px;
             height: 20px;
             background: url('/images/delete.png');
             background-position: center;
             background-repeat: no-repeat;
             background-size: 73%;
+            vertical-align: sub;
+        }
+    }
+
+    &__select-input {
+        width: 100%;
+        
+    }
+
+    &__button {
+        margin-top: 7px;
+        width: 100%;
+        background: #10698C;
+        border: 2px solid #4DC3CC;
+        box-sizing: border-box;
+        box-shadow: 0px 4px 9px rgba(127, 231, 241, 0.43);
+        border-radius: 0px 2px 2px 0px;
+        color: $primaryColor;
+        font-weight: 300;
+        font-size: 18px;
+        padding: 5px 7px;
+        text-transform: uppercase;
+        vertical-align: middle;
+        display: flex;
+        justify-content: space-between;
+
+        &:hover {
+            background: #277999;
+        }
+
+        &>i.extent-icon {
+            display: inline-block;
+            margin-left: 21px;
+            width: 20px;
+            height: 20px;
+            background: url('/images/arrow.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 60%;
             vertical-align: sub;
         }
     }

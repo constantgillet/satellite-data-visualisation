@@ -1,6 +1,12 @@
 .filters {
     width: 288px;
-    
+
+    &__buttons {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
     &__toggle-button {
         background: #10698C;
         border: 2px solid #4DC3CC;
@@ -10,11 +16,50 @@
         color: $primaryColor;
         font-weight: 300;
         font-size: 18px;
-        padding: 11px 14px;
+        padding: 5px 7px;
         text-transform: uppercase;
+        vertical-align: middle;
 
-        img {
-            margin-left: 35px;
+        &:hover {
+            background: #277999;
+        }
+
+        &__icon {
+            display: inline-block;
+            margin-left: 23px;
+            width: 20px;
+            height: 20px;
+            background: url('/images/filters.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            vertical-align: sub;
+        }
+    }
+
+    &__delete-button {
+        background: #10698C;
+        border: 2px solid #4DC3CC;
+        box-sizing: border-box;
+        box-shadow: 0px 4px 9px rgba(127, 231, 241, 0.43);
+        border-radius: 0px 2px 2px 0px;
+        color: $primaryColor;
+        font-weight: 300;
+        font-size: 18px;
+        padding: 5px 7px;
+        text-transform: uppercase;
+        vertical-align: middle;
+
+        &__icon {
+            display: inline-block;
+            margin-left: 23px;
+            width: 20px;
+            height: 20px;
+            background: url('/images/delete.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 73%;
+            vertical-align: sub;
         }
     }
 }

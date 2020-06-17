@@ -2,6 +2,7 @@ import './style/main.scss'
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 
+<<<<<<< HEAD
 
 /**
  * Scene
@@ -82,10 +83,17 @@ const test = document.addEventListener('click', () =>
     console.log('segpa');
     
 })
+=======
+//Import objects
+import Filters from './scripts/Filters'
+
+console.log('Hello Webpack')
+>>>>>>> c965c66741929bc7bc5db028e1fcbeedd777fdf2
 
 //On demande les satellites depuis l'API
 
 //On applique les mets sur les filtres
+const filters = new Filters(document.querySelector('.filters'))
 
 //On met les petits points de satellites dans la div
 

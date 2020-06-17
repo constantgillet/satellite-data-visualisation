@@ -9,6 +9,13 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 const scene = new THREE.Scene()
 
 /**
+ * Camera
+ */
+const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 20)
+camera.position.z = 12
+scene.add(camera)
+
+/**
  * Sizes
  */
 const sizes = {}
@@ -16,11 +23,11 @@ sizes.width = window.innerWidth
 sizes.height = window.innerHeight
 
 /**
- * Camera
+ * Cursor
  */
-const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 20)
-camera.position.z = 12
-scene.add(camera)
+const cursor = {}
+cursor.x = 0
+cursor.y = 0
 
 /**
  * Object
@@ -46,6 +53,20 @@ cameraControls.zoomSpeed = 0.3
 cameraControls.enableDamping = true
 
 /**
+ * Resize
+ */
+window.addEventListener('resize', () =>
+{
+    sizes.width = window.innerWidth
+    sizes.height = window.innerHeight
+
+    camera.aspect = sizes.width / sizes.height
+    camera.upgradeProjectionMatrix()
+
+    renderer.setSize(size.width, sizes.height)
+})
+
+/**
  * Loop
  */
 const loop = () =>
@@ -56,7 +77,11 @@ const loop = () =>
     renderer.render(scene, camera)
 }
 
-
+const test = document.addEventListener('click', () =>
+{
+    console.log('segpa');
+    
+})
 
 //On demande les satellites depuis l'API
 

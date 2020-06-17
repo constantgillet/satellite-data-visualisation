@@ -1,0 +1,18 @@
+.filters {
+    &__toggle-button {
+        background: #10698C;
+        border: 2px solid #4DC3CC;
+        box-sizing: border-box;
+        box-shadow: 0px 4px 9px rgba(127, 231, 241, 0.43);
+        border-radius: 0px 2px 2px 0px;
+        color: $primaryColor;
+        font-weight: 300;
+        font-size: 18px;
+        padding: 11px 14px;
+        text-transform: uppercase;
+
+        img {
+            margin-left: 35px;
+        }
+    }
+}

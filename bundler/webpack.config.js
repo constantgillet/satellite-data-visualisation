@@ -25,7 +25,12 @@ module.exports = {
         new MiniCssExtractPlugin({filename: 'style.css'}),
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, '../src/index.html')
+            template: path.resolve(__dirname, '../src/index.html'),
+            filename: 'index.html'
+        }),
+        new HtmlWebpackPlugin({
+            template: path.resolve(__dirname, '../src/page2.html'),
+            filename: 'page2.html'
         })
     ],
     module:

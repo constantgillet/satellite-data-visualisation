@@ -36,7 +36,6 @@ export default class Filters {
 
             buttonSelectCountry.classList.toggle('active')
             this.countrySelect.classList.toggle('active')
-            console.log(this.buttonSelectCountry);
         })
     }
 
@@ -46,9 +45,7 @@ export default class Filters {
 
         buttonSelectUsual.addEventListener('click', (_event) => {
             _event.preventDefault()
-            console.log(this.buttonSelectUsual);
             buttonSelectUsual.classList.toggle('active')
-            console.log(this.usualSelect)
             this.usualSelect.classList.toggle('active')
         })
     }
@@ -60,7 +57,6 @@ export default class Filters {
             _event.preventDefault()
             buttonSelectLaucherType.classList.toggle('active')
             this.laucherTypeSelect.classList.toggle('active')
-            console.log(this.laucherTypeSelect);
 
         })
     }

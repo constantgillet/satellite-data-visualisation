@@ -22,7 +22,6 @@ export default class Filters {
     }
 
     clickToggleFiltersButton = () => {
-        const form = this.element.querySelector('.filters__button')
 
         this.toggleFiltersButton.addEventListener('click', () => {
 
@@ -38,6 +37,15 @@ export default class Filters {
 
             buttonSelectCountry.classList.toggle('active')
             this.countrySelect.classList.toggle('active')
+<<<<<<< HEAD
+
+
+            if (this.form.open) {
+
+                console.log('form');
+            }
+=======
+>>>>>>> 21e94f2584dba05f167d7dcd753065e8a8b69a0f
         })
     }
 
@@ -47,7 +55,13 @@ export default class Filters {
 
         buttonSelectUsual.addEventListener('click', (_event) => {
             _event.preventDefault()
+<<<<<<< HEAD
+
             buttonSelectUsual.classList.toggle('active')
+
+=======
+            buttonSelectUsual.classList.toggle('active')
+>>>>>>> 21e94f2584dba05f167d7dcd753065e8a8b69a0f
             this.usualSelect.classList.toggle('active')
         })
     }
@@ -59,6 +73,10 @@ export default class Filters {
             _event.preventDefault()
             buttonSelectLaucherType.classList.toggle('active')
             this.laucherTypeSelect.classList.toggle('active')
+<<<<<<< HEAD
+
+=======
+>>>>>>> 21e94f2584dba05f167d7dcd753065e8a8b69a0f
 
         })
     }

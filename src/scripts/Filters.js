@@ -3,30 +3,43 @@ export default class Filters {
         this.element = _element
         this.satellites = satellites
         this.toggleFiltersButton = _element.querySelector('#js-toggle-filters-button')
-        this.form = this.element.querySelector('.filters__form')
-        this.countrySelect = this.element.querySelector('#js-select-country')
+        this.filter__button = _element.querySelector('.filters__button')
+        this.filter__button = _element.querySelector('.filters__button')
+        this.filter__button = _element.querySelector('.filters__button')
 
         //Methods
         this.clickToggleFiltersButton()
-        this.clickButtonSelectCountry()
+        this.clickfilter__button()
     }
 
     clickToggleFiltersButton = () => {
 
         this.toggleFiltersButton.addEventListener('click', () => {
-            
-            this.form.classList.toggle('active')
+
+            form.classList.toggle('active')
+        })
+    }
+    clickToggleFiltersButton = () => {
+        const form = this.element.querySelector('.filters__button')
+
+        this.toggleFiltersButton.addEventListener('click', () => {
+
+            form.classList.toggle('active')
         })
     }
 
-    clickButtonSelectCountry = () => {
+    clickToggleFiltersButton = () => {
+        const form = this.element.querySelector('.filters__option')
 
-        const buttonSelectCountry = this.form.querySelector('#js-button-select-country')
+        this.toggleFiltersButton.addEventListener('click', () => {
 
-        buttonSelectCountry.addEventListener('click', (_event) => {
-            _event.preventDefault()
-            buttonSelectCountry.classList.toggle('active')
-            this.countrySelect.classList.toggle('active')
+            form.classList.toggle('active')
         })
-    }
-}
+
+        clickToggleFiltersButton = () => {
+            const form = this.element.querySelector('.filters__imput')
+
+            this.toggleFiltersButton.addEventListener('click', () => {
+
+                form.classList.toggle('active')
+            })

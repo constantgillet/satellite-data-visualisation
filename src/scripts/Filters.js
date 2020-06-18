@@ -13,10 +13,10 @@ export default class Filters {
         //Methods
         this.clickToggleFiltersButton()
         this.clickButtonSelectCountry()
-        this.clickusualSelect()
-        this.clicklaucherTypeSelect()
-        this.clicklaucherPlaceSelect()
-        this.clickmasseSelect()
+        this.clickUsualSelect()
+        this.clickLaucherTypeSelect()
+        this.clickLaucherPlaceSelect()
+        this.clickMasseSelect()
     }
 
     clickToggleFiltersButton = () => {
@@ -39,41 +39,41 @@ export default class Filters {
         })
     }
 
-    clickusualSelect = () => {
-        const buttonSelectUsual = this.element.querySelector('.filters__button')
+    clickUsualSelect = () => {
+        const buttonSelectUsual = this.form.querySelector('#js-button-select-usual')
 
         this.toggleFiltersButton.addEventListener('click', (_event) => {
-
+            _event.preventDefault()
             buttonSelectUsual.classList.toggle('active')
             this.usualSelect.classList.toggle('active')
         })
     }
 
-    clicklaucherTypeSelect = () => {
-        const buttonSelectLaucherType = this.element.querySelector('.filters__option')
+    clickLaucherTypeSelect = () => {
+        const buttonSelectLaucherType = this.form.querySelector('#js-button-select-laucher-type')
 
         this.toggleFiltersButton.addEventListener('click', (_event) => {
-
+            _event.preventDefault()
             buttonSelectLaucherType.classList.toggle('active')
             this.laucherTypeSelect.classList.toggle('active')
         })
     }
 
-    clicklaucherPlaceSelect = () => {
-        const buttonSelectLaucherPlace = this.element.querySelector('.filters__imput')
+    clickLaucherPlaceSelect = () => {
+        const buttonSelectLaucherPlace = this.form.querySelector('#js-button-select-laucher-place')
 
         this.toggleFiltersButton.addEventListener('click', (_event) => {
-
+            _event.preventDefault()
             buttonSelectLaucherPlace.classList.toggle('active')
             this.laucherPlaceSelect.classList.toggle('active')
         })
     }
 
-    clickmasseSelect = () => {
-        const buttonSelectMasse = this.element.querySelector('.filters__imput')
+    clickMasseSelect = () => {
+        const buttonSelectMasse = this.form.querySelector('#js-button-select-masse')
 
         this.toggleFiltersButton.addEventListener('click', (_event) => {
-
+            _event.preventDefault()
             buttonSelectMasse.classList.toggle('active')
             this.masseSelect.classList.toggle('active')
         })

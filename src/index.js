@@ -19,24 +19,11 @@ const filters = new Filters(document.querySelector('.filters'))
 ////Dans les objets lors du survol d'un 
 
 /**
- * Scene
- */
-const scene = new THREE.Scene()
-
-/**
  * Sizes
  */
 const sizes = {}
 sizes.width = window.innerWidth
 sizes.height = window.innerHeight
-
-/**
- * Camera
- */
-const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 20)
-camera.position.z = 12
-scene.add(camera)
-
 
 /**
  * Cursor
@@ -45,10 +32,28 @@ const cursor = {}
 cursor.x = 0
 cursor.y = 0
 
+window.addEventListener('mousemove', (_event) => 
+{
+    cursor.x = _event.clientX / sizes.width - 0.5
+    cursor.y = _event.clientY / sizes.height - 0.5
+})
+
+/**
+ * Scene
+ */
+const scene = new THREE.Scene()
+
+/**
+ * Camera
+ */
+const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 20)
+camera.position.z = 12
+scene.add(camera)
+
 /**
  * Object
  */
-const geometry = new THREE.SphereGeometry( 5, 32, 32 );
+const geometry = new THREE.SphereGeometry( 5, 60, 60 );
 const material = new THREE.MeshNormalMaterial();
 const sphere = new THREE.Mesh( geometry, material );
 scene.add( sphere );
@@ -58,8 +63,8 @@ scene.add( sphere );
  */
 const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true })
 renderer.setSize(sizes.width, sizes.height)
+renderer.setPixelRatio(window.devicePixelRatio)
 document.body.appendChild(renderer.domElement)
-renderer.render(scene, camera)
 
 /**
  * Camera controls
@@ -71,15 +76,15 @@ cameraControls.enableDamping = true
 /**
  * Resize
  */
-window.addEventListener('resize', () =>
+window.addEventListener('resize', () => 
 {
     sizes.width = window.innerWidth
     sizes.height = window.innerHeight
 
     camera.aspect = sizes.width / sizes.height
-    camera.upgradeProjectionMatrix()
+    camera.updateProjectionMatrix()
 
-    renderer.setSize(size.width, sizes.height)
+    renderer.setSize(sizes.width, sizes.height)
 })
 
 /**
@@ -91,4 +96,7 @@ const loop = () =>
 
     cameraControls.update()
     renderer.render(scene, camera)
+    
 }
+
+loop()

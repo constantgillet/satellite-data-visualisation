@@ -17,6 +17,9 @@ fetch(`${API_URL}/api/getAllSatellites.php`)
     console.error(error)       
 })
 
+
+
+
 //On applique les mets sur les filtres
 const filters = new Filters(document.querySelector('.filters'))
 

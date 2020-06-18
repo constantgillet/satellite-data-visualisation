@@ -13,7 +13,6 @@ export default class Filters {
     }
 
     clickToggleFiltersButton = () => {
-        const form = this.element.querySelector('.filters__form')
 
         this.toggleFiltersButton.addEventListener('click', () => {
 

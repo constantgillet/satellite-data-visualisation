@@ -18,7 +18,7 @@
 
 <body>
     <main>
-        <canvas class="space-canvas"></canvas>
+        <div class="canvas-position"></div>
         <div class="square-background">
             <div class="container">
                 <h1 class="main-title">SATELLITE DATA <br> <span>visualisation</span></h1>
@@ -30,10 +30,10 @@
                                 class="filters__delete-button__icon"></div></button>
                     </div>
                     <form class="filters__form">
-                        <button class="filters__button active">Pays d'origine <i class="extent-icon"></i></button>
-                        <select multiple="multiple" name="countries" class="filters__select-input active">
+                        <button class="filters__button" id="js-button-select-country">Pays d'origine <i class="extent-icon"></i></button>
+                        <select multiple="multiple" name="countries" class="filters__select-input" id="js-select-country">
                             <option value="volvo" selected>Espagne</option>
-                            <option value="saab" selected>Etats-Unis</option>
+                            <option value="saab" selected>états-Unis</option>
                             <option value="mercedes" selected>éthiopie</option>
                             <option value="audi" selected>France</option>
                             <option value="audi" selected>France</option>
@@ -54,6 +54,9 @@
                     <h2 class="chart-purposes__title">UTILISATIONS</h2>
                 </div> -->
 
+            </div>
+            <div class="satellite-number">
+                <h2>Nombre de satellites : 2667</h2>
             </div>
         </div>
     </main>

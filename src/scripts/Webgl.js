@@ -1,13 +1,15 @@
 import * as THREE from 'three'
 //import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
+//import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import earthSource from '../../static/images/earth.jpg'
+import earthNormalMapSource from '../../static/images/earth-normal-map.png'
 
 /***
  * Textures
 */
 const textureLoader = new THREE.TextureLoader()
 const earthTexture = textureLoader.load(earthSource)
+const earthNormalMap = textureLoader.load(earthNormalMapSource)
 
 /**
  * Sizes
@@ -44,9 +46,6 @@ scene.add(camera)
 /**
  * Light
  */
-//const ambientLight = new THREE.AmbientLight(0xffffff, 0.2)
-//scene.add(ambientLight)
-
 const directionalLight = new THREE.DirectionalLight(0xffffff, 1)
 directionalLight.position.x = 5
 directionalLight.position.y = 5
@@ -75,9 +74,10 @@ scene.add(directionalLight)
  * Object
  */
 const geometry = new THREE.SphereGeometry( 3, 60, 60 );
-const material = new THREE.MeshBasicMaterial(
+const material = new THREE.MeshMatcapMaterial(
     { 
         map: earthTexture,
+        normalMap: earthNormalMap,
     });
 const sphere = new THREE.Mesh( geometry, material );
 scene.add( sphere );

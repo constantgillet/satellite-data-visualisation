@@ -53,22 +53,22 @@ directionalLight.position.y = 5
 directionalLight.position.z = 5
 scene.add(directionalLight)
 
-/**
- * GLTF loading 
- */
-const gltfLoader = new GLTFLoader()
-
-gltfLoader.load(
-    'models/earth.gltf',
-    (gltf) =>
-    {
-        while(gltf.scene.children.length)
-        {
-            const child = gltf.scene.children[0]
-            scene.add(child)
-        }
-    }
-)
+///**
+// * GLTF loading 
+// */
+//const gltfLoader = new GLTFLoader()
+//
+//gltfLoader.load(
+//    'models/earth.gltf',
+//    (gltf) =>
+//    {
+//        while(gltf.scene.children.length)
+//        {
+//            const child = gltf.scene.children[0]
+//            scene.add(child)
+//        }
+//    }
+//)
 
 
 /**

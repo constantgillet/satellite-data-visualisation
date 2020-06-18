@@ -1,12 +1,11 @@
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
-import earthSource from '../../static/images/earth.png'
+import earthSource from '../../static/images/earth.jpg'
 
 /***
  * Textures
 */
 const textureLoader = new THREE.TextureLoader()
-
 const earthTexture = textureLoader.load(earthSource)
 
 /**
@@ -38,14 +37,17 @@ const scene = new THREE.Scene()
  * Camera
  */
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 20)
-camera.position.z = 12
+camera.position.z = 8
 scene.add(camera)
 
 /**
  * Object
  */
-const geometry = new THREE.SphereGeometry( 5, 60, 60 );
-const material = new THREE.MeshBasicMaterial({ map: earthTexture});
+const geometry = new THREE.SphereGeometry( 3, 60, 60 );
+const material = new THREE.MeshBasicMaterial(
+    { 
+        map: earthTexture,
+    });
 const sphere = new THREE.Mesh( geometry, material );
 scene.add( sphere );
 
@@ -55,7 +57,8 @@ scene.add( sphere );
 const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true })
 renderer.setSize(sizes.width, sizes.height)
 renderer.setPixelRatio(window.devicePixelRatio)
-document.body.appendChild(renderer.domElement)
+const canvasPosition = document.querySelector('.canvas-position')
+canvasPosition.appendChild(renderer.domElement)
 
 ///**
 // * Camera controls
@@ -83,7 +86,7 @@ window.addEventListener('resize', () =>
  */
 const loop = () =>
 {
-    sphere.rotation.y += 0.001
+    sphere.rotation.y += 0.0005
 
     window.requestAnimationFrame(loop)
 

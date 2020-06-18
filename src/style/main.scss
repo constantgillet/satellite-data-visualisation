@@ -101,3 +101,21 @@ main {
     letter-spacing: 0.04em;
     text-transform: uppercase;
 }
+
+.satellites-container {
+    width: 700px;
+    height: 700px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+
+    &__satellite {
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        background: #7FE7F1;
+        box-shadow: 1px 1px 6px #7FE7F1;
+        border-radius: 19px;
+    }
+}

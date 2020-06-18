@@ -4,12 +4,13 @@ export default class Filters {
         this.satellites = satellites
         this.toggleFiltersButton = _element.querySelector('#js-toggle-filters-button')
         this.filter__button = _element.querySelector('.filters__button')
-        this.filter__button = _element.querySelector('.filters__button')
-        this.filter__button = _element.querySelector('.filters__button')
+        this.filter__button = _element.querySelector('.filters__imput')
+        this.filter__button = _element.querySelector('.filters__option')
 
         //Methods
-        this.clickToggleFiltersButton()
         this.clickfilter__button()
+        this.clickToggleFiltersButton()
+
     }
 
     clickToggleFiltersButton = () => {
@@ -18,6 +19,8 @@ export default class Filters {
 
             form.classList.toggle('active')
         })
+
+
     }
     clickToggleFiltersButton = () => {
         const form = this.element.querySelector('.filters__button')

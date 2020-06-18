@@ -116,3 +116,10 @@ main {
     background-color:#7EE9F2 ;
   }
   
+  .satellite-number{
+      position: absolute;
+      left: calc(50% - 100px);
+      top: 82.5%;
+      width: 200px;
+      height: 20px;
+  }

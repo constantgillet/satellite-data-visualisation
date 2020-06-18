@@ -1,5 +1,6 @@
 import * as THREE from 'three'
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
+//import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import earthSource from '../../static/images/earth.jpg'
 
 /***
@@ -39,6 +40,36 @@ const scene = new THREE.Scene()
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 20)
 camera.position.z = 8
 scene.add(camera)
+
+/**
+ * Light
+ */
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.2)
+scene.add(ambientLight)
+
+const directionalLight = new THREE.DirectionalLight(0xffffff, 1)
+directionalLight.position.x = 5
+directionalLight.position.y = 5
+directionalLight.position.z = 5
+scene.add(directionalLight)
+
+/**
+ * GLTF loading 
+ */
+const gltfLoader = new GLTFLoader()
+
+gltfLoader.load(
+    'models/earth.gltf',
+    (gltf) =>
+    {
+        while(gltf.scene.children.length)
+        {
+            const child = gltf.scene.children[0]
+            scene.add(child)
+        }
+    }
+)
+
 
 /**
  * Object

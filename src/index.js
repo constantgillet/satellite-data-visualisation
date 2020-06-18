@@ -5,17 +5,22 @@ import { API_URL } from './scripts/config'
 
 //On demande les satellites depuis l'API
 
-//On applique les mets sur les filtres
-const filters = new Filters(document.querySelector('.filters'))
+let satellites
 
 fetch(`${API_URL}/api/getAllSatellites.php`)
 .then(res => res.json())
 .then(data => {
+    satellites = data
     console.log(data[0])
 },
 (error) => {     
-console.error(error)       
+    console.error(error)       
 })
+
+//On applique les mets sur les filtres
+const filters = new Filters(document.querySelector('.filters'))
+
+
 
 //On met les petits points de satellites dans la div
 

@@ -31,7 +31,6 @@ export default class Filters {
     clickButtonSelectCountry = () => {
 
         const buttonSelectCountry = this.form.querySelector('#js-button-select-country')
-
         buttonSelectCountry.addEventListener('click', (_event) => {
             _event.preventDefault()
 
@@ -49,6 +48,7 @@ export default class Filters {
             _event.preventDefault()
             console.log(this.buttonSelectUsual);
             buttonSelectUsual.classList.toggle('active')
+            console.log(this.usualSelect)
             this.usualSelect.classList.toggle('active')
         })
     }

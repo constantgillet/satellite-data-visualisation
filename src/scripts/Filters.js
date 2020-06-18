@@ -10,6 +10,7 @@ export default class Filters {
         this.laucherPlaceSelect = this.element.querySelector('#js-select-laucher-place')
         this.masseSelect = this.element.querySelector('#js-select-masse')
 
+
         //Methods
         this.clickToggleFiltersButton()
         this.clickButtonSelectCountry()
@@ -17,6 +18,7 @@ export default class Filters {
         this.clickLaucherTypeSelect()
         this.clickLaucherPlaceSelect()
         this.clickMasseSelect()
+
     }
 
     clickToggleFiltersButton = () => {
@@ -36,7 +38,14 @@ export default class Filters {
 
             buttonSelectCountry.classList.toggle('active')
             this.countrySelect.classList.toggle('active')
-            console.log(this.buttonSelectCountry);
+<<<<<<< HEAD
+            if (buttonSelectUsual.classList.toggle('active')) {
+                buttonSelectCountry.removeclassList('active')
+                console.log(this.form.open);
+
+            }
+=======
+>>>>>>> 0a8e7ada1164f8ab3d5ac709189f128592dabd48
         })
     }
 
@@ -46,9 +55,13 @@ export default class Filters {
 
         buttonSelectUsual.addEventListener('click', (_event) => {
             _event.preventDefault()
-            console.log(this.buttonSelectUsual);
+<<<<<<< HEAD
+
             buttonSelectUsual.classList.toggle('active')
-            console.log(this.usualSelect)
+
+=======
+            buttonSelectUsual.classList.toggle('active')
+>>>>>>> 0a8e7ada1164f8ab3d5ac709189f128592dabd48
             this.usualSelect.classList.toggle('active')
         })
     }
@@ -60,7 +73,10 @@ export default class Filters {
             _event.preventDefault()
             buttonSelectLaucherType.classList.toggle('active')
             this.laucherTypeSelect.classList.toggle('active')
-            console.log(this.laucherTypeSelect);
+<<<<<<< HEAD
+
+=======
+>>>>>>> 0a8e7ada1164f8ab3d5ac709189f128592dabd48
 
         })
     }

@@ -24,6 +24,12 @@ fetch(`${API_URL}/api/getAllSatellites.php`)
 
 
 
+
+//On applique les mets sur les filtres
+const filters = new Filters(document.querySelector('.filters'))
+
+
+
 //On met les petits points de satellites dans la div
 
 //let filtredSatellites = []

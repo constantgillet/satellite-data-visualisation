@@ -10,6 +10,7 @@ export default class Filters {
         this.laucherPlaceSelect = this.element.querySelector('#js-select-laucher-place')
         this.masseSelect = this.element.querySelector('#js-select-masse')
 
+
         //Methods
         this.clickToggleFiltersButton()
         this.clickButtonSelectCountry()
@@ -17,6 +18,7 @@ export default class Filters {
         this.clickLaucherTypeSelect()
         this.clickLaucherPlaceSelect()
         this.clickMasseSelect()
+
     }
 
     clickToggleFiltersButton = () => {

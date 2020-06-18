@@ -43,3 +43,6 @@ export default class Filters {
 
                 form.classList.toggle('active')
             })
+        }
+    }
+}

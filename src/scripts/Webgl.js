@@ -44,8 +44,8 @@ scene.add(camera)
 /**
  * Light
  */
-const ambientLight = new THREE.AmbientLight(0xffffff, 0.2)
-scene.add(ambientLight)
+//const ambientLight = new THREE.AmbientLight(0xffffff, 0.2)
+//scene.add(ambientLight)
 
 const directionalLight = new THREE.DirectionalLight(0xffffff, 1)
 directionalLight.position.x = 5

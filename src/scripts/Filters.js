@@ -19,8 +19,23 @@ export default class Filters {
         this.clickLaucherTypeSelect()
         this.clickLaucherPlaceSelect()
         this.clickMasseSelect()
-
+        this.clickButtonDeleteFilters()
         this.optionClick()
+    }
+
+    clickButtonDeleteFilters = () => {
+        const deleteFiltersButton = this.element.querySelector('#js-delete-filters-button')
+
+        deleteFiltersButton.addEventListener('click', () => {
+            this.notSelectedOptions = []
+            this.applyFilters()
+
+            const optionsElements = this.form.querySelectorAll('.filters__select-input option')
+
+            optionsElements.forEach(optionElement => {
+                optionElement.selected = true
+            })
+        })
     }
 
     optionClick = () => {
@@ -29,6 +44,7 @@ export default class Filters {
         for (let index = 0; index < optionsElements.length; index++) {
             const option = optionsElements[index]
             option.addEventListener('click', () => {
+
                 if (this.notSelectedOptions.includes(option.value)) {
                     this.removeItem(this.notSelectedOptions, option.value)
                 } else {
@@ -59,7 +75,9 @@ export default class Filters {
             let isAllowed = true
 
             this.notSelectedOptions.forEach(notSelectedOption => {
-                if (satelliteData.country_operator_owner == notSelectedOption || satelliteData.purpose == notSelectedOption) {
+                if (satelliteData.country_operator_owner == notSelectedOption || satelliteData.purpose == notSelectedOption || satelliteData.launch_site == notSelectedOption) {
+                    isAllowed = false
+                } else if (satelliteData.launch_vehicle.includes(notSelectedOption)) {
                     isAllowed = false
                 }
             })

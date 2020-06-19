@@ -67,7 +67,7 @@ export default class Filters {
 
         this.toggleFiltersButton.addEventListener('click', () => {
 
-            this.form.classList.toggle('active')
+            this.form.classList.toggle('active-filter')
         })
     }
 
@@ -79,6 +79,11 @@ export default class Filters {
 
             buttonSelectCountry.classList.toggle('active')
             this.countrySelect.classList.toggle('active')
+
+            // if (this.form.classList.contains('active') == true) {
+
+            //     this.form.classList.remove('active')
+            // }
         })
     }
 
@@ -88,6 +93,7 @@ export default class Filters {
 
         buttonSelectUsual.addEventListener('click', (_event) => {
             _event.preventDefault()
+
             buttonSelectUsual.classList.toggle('active')
             this.usualSelect.classList.toggle('active')
         })
@@ -100,7 +106,6 @@ export default class Filters {
             _event.preventDefault()
             buttonSelectLaucherType.classList.toggle('active')
             this.laucherTypeSelect.classList.toggle('active')
-
         })
     }
 
@@ -124,3 +129,4 @@ export default class Filters {
         })
     }
 }
+

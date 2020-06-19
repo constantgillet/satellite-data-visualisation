@@ -174,11 +174,17 @@
             background-color:#7EE9F2 ;
           }
 
-        option {
+        &__option {
             font-weight: 300;
             font-size: 13px;
             line-height: 10px;
             height: 18px;
+            background-color: #4DC3CC;
+        }
+        
+        &__option:checked {
+            color: white;
+            background-color: #4DC3CC;
         }
     } 
 }

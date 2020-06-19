@@ -24,7 +24,7 @@ export default class Filters {
 
     optionClick = () => {
         const optionsElements = this.form.querySelectorAll('.filters__select-input option')
-        
+
         for (let index = 0; index < optionsElements.length; index++) {
             const option = optionsElements[index]
             option.addEventListener('click', () => {
@@ -37,28 +37,28 @@ export default class Filters {
                 console.log(this.notSelectedOptions)
                 let i = 0
                 optionsElements.forEach(_element => {
-                   
-                   if (this.notSelectedOptions.includes(i)) {
-                       _element.selected = false
-                   } else {
+
+                    if (this.notSelectedOptions.includes(i)) {
+                        _element.selected = false
+                    } else {
                         _element.selected = true
-                   }
-                   i++
+                    }
+                    i++
                 })
-                
+
                 this.applyFilters()
             })
         }
     }
 
     applyFilters = () => {
-    
+
     }
 
     removeItem = (array, item) => {
-        for(var i in array){
-            if(array[i]==item){
-                array.splice(i,1);
+        for (var i in array) {
+            if (array[i] == item) {
+                array.splice(i, 1);
                 break;
             }
         }
@@ -79,14 +79,11 @@ export default class Filters {
 
             buttonSelectCountry.classList.toggle('active')
             this.countrySelect.classList.toggle('active')
-<<<<<<< HEAD
 
             // if (this.form.classList.contains('active') == true) {
 
             //     this.form.classList.remove('active')
             // }
-=======
->>>>>>> 0cc0ff94a0b42c427c08b302daf835c4b7aa0c5a
         })
     }
 
@@ -96,13 +93,9 @@ export default class Filters {
 
         buttonSelectUsual.addEventListener('click', (_event) => {
             _event.preventDefault()
-<<<<<<< HEAD
 
             buttonSelectUsual.classList.toggle('active')
 
-=======
-            buttonSelectUsual.classList.toggle('active')
->>>>>>> 0cc0ff94a0b42c427c08b302daf835c4b7aa0c5a
             this.usualSelect.classList.toggle('active')
         })
     }
@@ -114,10 +107,6 @@ export default class Filters {
             _event.preventDefault()
             buttonSelectLaucherType.classList.toggle('active')
             this.laucherTypeSelect.classList.toggle('active')
-<<<<<<< HEAD
-=======
-
->>>>>>> 0cc0ff94a0b42c427c08b302daf835c4b7aa0c5a
         })
     }
 

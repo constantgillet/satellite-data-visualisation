@@ -176,6 +176,10 @@
             background-color:#7EE9F2 ;
           }
 
+          .filters__select-input::before{
+              background-color: #10698C ;
+          }
+
         option {
             font-weight: 300;
             font-size: 14px;
@@ -188,5 +192,14 @@
             color: white;
             background-color: #10698C;
         }
+        
+        // option::after {
+            // width: 3px;
+            // content:url(/images/check.png);
+            
+         
+        
+        // }
+       
     }
 } 

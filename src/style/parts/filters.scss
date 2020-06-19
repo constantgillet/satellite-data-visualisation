@@ -78,13 +78,12 @@
 
     &__form {
         transform: translateX(-150%);
-        transition-property: transform;
-        transition-duration: 0.3s;
-        transition-timing-function: ease-in-out;
-        transition-delay: 0s;
 
         &.active-filter {
             transform: translateX(0%);
+            transition-property: transform;
+            transition-duration: 0.3s;
+            transition-timing-function: ease-in-out;
         }
     }
 

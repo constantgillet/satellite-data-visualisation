@@ -7,6 +7,12 @@ import { API_URL } from './scripts/config'
 
 let satellites
 const webgl = new Webgl
+const satellitesNumber = document.querySelector('#satellites-number')
+
+const updateSatellites = (newSatellites) => {
+    //console.log(newSatellites)
+    satellitesNumber.innerText = newSatellites.length
+}
 
 fetch(`${API_URL}/api/getAllSatellites.php`)
 .then(res => res.json())
@@ -15,13 +21,9 @@ fetch(`${API_URL}/api/getAllSatellites.php`)
     console.log(data[0])
 
     //On applique les mets sur les filtres
-    const filters = new Filters(document.querySelector('.filters'), satellites)
-    const satellitesNumber = document.querySelector('#satellites-number')
+    const filters = new Filters(document.querySelector('.filters'), satellites, updateSatellites)
     
     satellitesNumber.innerText = satellites.length
-
-
-
 },
 (error) => {     
     console.error(error)       

@@ -10,6 +10,7 @@ export default class Filters {
         this.laucherPlaceSelect = this.element.querySelector('#js-select-laucher-place')
         this.masseSelect = this.element.querySelector('#js-select-masse')
         this.notSelectedOptions = []
+        this.updateSatellites = updateSatellites
 
         //Methods
         this.clickToggleFiltersButton()
@@ -69,6 +70,7 @@ export default class Filters {
         })
 
         console.log(newSatellites.length)
+        this.updateSatellites(newSatellites)
     }
 
     removeItem = (array, item) => {

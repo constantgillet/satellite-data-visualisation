@@ -10,6 +10,7 @@ export default class Webgl {
 
     updateColors = (numberOfSatellitesSelected) => {
         this.numberOfSatellitesSelected = numberOfSatellitesSelected
+
     }
 
     init = () => {

@@ -1,5 +1,5 @@
 import * as THREE from 'three'
-//import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 //import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import earthSource from '../../static/images/earth.jpg'
 import earthNormalMapSource from '../../static/images/earth-normal-map.png'
@@ -40,7 +40,7 @@ const scene = new THREE.Scene()
  * Camera
  */
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 20)
-camera.position.z = 8
+camera.position.z = 12
 scene.add(camera)
 
 /**
@@ -73,7 +73,7 @@ scene.add(directionalLight)
 /**
  * Object
  */
-const geometry = new THREE.SphereGeometry( 3, 60, 60 );
+const geometry = new THREE.SphereGeometry( 4, 60, 60 );
 const material = new THREE.MeshMatcapMaterial(
     { 
         map: earthTexture,
@@ -81,6 +81,34 @@ const material = new THREE.MeshMatcapMaterial(
     });
 const sphere = new THREE.Mesh( geometry, material );
 scene.add( sphere );
+
+const satellites = new THREE.Group()
+scene.add(satellites)
+
+for(let i=0; i<2600; i++){
+    const satelliteGeometry = new THREE.SphereGeometry( 0.02, 10, 10 );
+    const satelliteMaterial = new THREE.MeshBasicMaterial({
+        color: 0x7FE7F1
+    });
+    const satellite = new THREE.Mesh( satelliteGeometry, satelliteMaterial );
+    satellites.add( satellite );
+
+    var orbitRadius = THREE.Math.randFloatSpread(5) + 6.8; // for example
+    var date;
+    
+    date = THREE.Math.randFloatSpread(10);
+    satellite.position.set(
+      Math.cos(date) * orbitRadius,
+      0,
+      Math.sin(date) * orbitRadius,
+    );
+    satellite.position.y += THREE.Math.randFloatSpread(3.4);
+
+}
+
+
+
+
 
 /**
  * Renderer
@@ -94,9 +122,9 @@ canvasPosition.appendChild(renderer.domElement)
 ///**
 // * Camera controls
 // */
-//const cameraControls = new OrbitControls(camera, renderer.domElement)
-//cameraControls.zoomSpeed = 0.3
-//cameraControls.enableDamping = true
+const cameraControls = new OrbitControls(camera, renderer.domElement)
+cameraControls.zoomSpeed = 0.3
+cameraControls.enableDamping = true
 
 /**
  * Resize
@@ -117,11 +145,12 @@ window.addEventListener('resize', () =>
  */
 const loop = () =>
 {
-    sphere.rotation.y += 0.0005
+    sphere.rotation.y += 0.0002
+    satellites.rotation.y += 0.0003
 
     window.requestAnimationFrame(loop)
 
-    //cameraControls.update()
+    cameraControls.update()
     renderer.render(scene, camera)
     
 }

@@ -1,6 +1,7 @@
 import * as THREE from 'three'
 import earthSource from '../../static/images/earth.jpg'
 import earthNormalMapSource from '../../static/images/earth-normal-map.png'
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 
 export default class Webgl {
     constructor() {
@@ -122,6 +123,12 @@ export default class Webgl {
         canvasPosition.appendChild(renderer.domElement)
 
         /**
+         * Orbit Control
+         */
+        const cameraControls = new OrbitControls(camera, renderer.domElement)
+        cameraControls.enableDamping = true
+        
+        /**
          * Resize
          */
         window.addEventListener('resize', () => 
@@ -140,6 +147,8 @@ export default class Webgl {
          */
         const loop = () =>
         {
+
+            cameraControls.update()
 
             sphere.rotation.y += 0.0002
             satellites.rotation.y += 0.0003

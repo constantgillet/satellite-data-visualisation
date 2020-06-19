@@ -1,6 +1,6 @@
 .filters {
     width: 276px;
-    
+    pointer-events: all; 
     
     &.active-filter {
         display: block;

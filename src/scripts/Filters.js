@@ -28,31 +28,47 @@ export default class Filters {
         for (let index = 0; index < optionsElements.length; index++) {
             const option = optionsElements[index]
             option.addEventListener('click', () => {
-                if (this.notSelectedOptions.includes(index)) {
-                    this.removeItem(this.notSelectedOptions, index)
+                if (this.notSelectedOptions.includes(option.value)) {
+                    this.removeItem(this.notSelectedOptions, option.value)
                 } else {
-                    this.notSelectedOptions.push(index)
+                    this.notSelectedOptions.push(option.value)
                 }
 
-                console.log(this.notSelectedOptions)
+                
                 let i = 0
                 optionsElements.forEach(_element => {
 
-                    if (this.notSelectedOptions.includes(i)) {
+                    if (this.notSelectedOptions.includes(_element.value)) {
                         _element.selected = false
                     } else {
                         _element.selected = true
                     }
                     i++
                 })
-
+                console.log(this.notSelectedOptions)
                 this.applyFilters()
             })
         }
     }
 
     applyFilters = () => {
+        const newSatellites = []
+        
+        this.satellites.forEach(satelliteData => {
+            let isAllowed = true
 
+            this.notSelectedOptions.forEach(notSelectedOption => {
+                if (satelliteData.country_operator_owner == notSelectedOption || satelliteData.purpose == notSelectedOption) {
+                    isAllowed = false
+                }
+            })
+
+            if (isAllowed) {
+                newSatellites.push(satelliteData)
+            }
+        })
+
+        console.log(newSatellites.length)
     }
 
     removeItem = (array, item) => {

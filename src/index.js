@@ -12,6 +12,7 @@ const satellitesNumber = document.querySelector('#satellites-number')
 const updateSatellites = (newSatellites) => {
     //console.log(newSatellites)
     satellitesNumber.innerText = newSatellites.length
+    webgl.updateColors(satellites.length - newSatellites.length)
 }
 
 fetch(`${API_URL}/api/getAllSatellites.php`)

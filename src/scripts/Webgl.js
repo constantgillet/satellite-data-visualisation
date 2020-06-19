@@ -1,17 +1,29 @@
 import * as THREE from 'three'
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
-//import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import earthSource from '../../static/images/earth.jpg'
 import earthNormalMapSource from '../../static/images/earth-normal-map.png'
 
 export default class Webgl {
     constructor() {
         this.numberOfSatellitesSelected = 0
+        this.scene = null
         this.init()
     }
 
     updateColors = (numberOfSatellitesSelected) => {
         this.numberOfSatellitesSelected = numberOfSatellitesSelected
+
+        const satellites = this.scene.children[3].children
+        //console.log(this.scene.children[3].children)
+
+        satellites.forEach(satellite => {
+            satellite.material.color = {r: 0, g: 255, b: 255}
+        })
+
+        for (let i = 0; i < this.numberOfSatellitesSelected; i++) {
+            const satellite = this.scene.children[3].children[i]
+
+            satellite.material.color = {r: 1, g: 0, b: 0}
+        }
     }
 
     init = () => {
@@ -44,16 +56,16 @@ export default class Webgl {
         })
 
         /**
-         * Scene
+         * this.scene
          */
-        const scene = new THREE.Scene()
+        this.scene = new THREE.Scene()
 
         /**
          * Camera
          */
         const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 20)
         camera.position.z = 12
-        scene.add(camera)
+        this.scene.add(camera)
 
         /**
          * Light
@@ -62,25 +74,7 @@ export default class Webgl {
         directionalLight.position.x = 5
         directionalLight.position.y = 5
         directionalLight.position.z = 5
-        scene.add(directionalLight)
-
-        ///**
-        // * GLTF loading 
-        // */
-        //const gltfLoader = new GLTFLoader()
-        //
-        //gltfLoader.load(
-        //    'models/earth.gltf',
-        //    (gltf) =>
-        //    {
-        //        while(gltf.scene.children.length)
-        //        {
-        //            const child = gltf.scene.children[0]
-        //            scene.add(child)
-        //        }
-        //    }
-        //)
-
+        this.scene.add(directionalLight)
 
         /**
          * Object
@@ -92,10 +86,10 @@ export default class Webgl {
                 normalMap: earthNormalMap,
             });
         const sphere = new THREE.Mesh( geometry, material );
-        scene.add( sphere );
+        this.scene.add( sphere );
 
         const satellites = new THREE.Group()
-        scene.add(satellites)
+        this.scene.add(satellites)
 
         for(let i=0; i<2600; i++){
             const satelliteGeometry = new THREE.SphereGeometry( 0.02, 10, 10 );
@@ -118,10 +112,6 @@ export default class Webgl {
 
         }
 
-
-
-
-
         /**
          * Renderer
          */
@@ -130,13 +120,6 @@ export default class Webgl {
         renderer.setPixelRatio(window.devicePixelRatio)
         const canvasPosition = document.querySelector('.canvas-position')
         canvasPosition.appendChild(renderer.domElement)
-
-        ///**
-        // * Camera controls
-        // */
-        const cameraControls = new OrbitControls(camera, renderer.domElement)
-        cameraControls.zoomSpeed = 0.3
-        cameraControls.enableDamping = true
 
         /**
          * Resize
@@ -157,13 +140,13 @@ export default class Webgl {
          */
         const loop = () =>
         {
+
             sphere.rotation.y += 0.0002
             satellites.rotation.y += 0.0003
 
             window.requestAnimationFrame(loop)
 
-            cameraControls.update()
-            renderer.render(scene, camera)
+            renderer.render(this.scene, camera)
             
         }
 

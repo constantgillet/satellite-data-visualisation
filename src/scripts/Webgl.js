@@ -1,6 +1,4 @@
 import * as THREE from 'three'
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
-//import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import earthSource from '../../static/images/earth.jpg'
 import earthNormalMapSource from '../../static/images/earth-normal-map.png'
 
@@ -64,24 +62,6 @@ export default class Webgl {
         directionalLight.position.z = 5
         scene.add(directionalLight)
 
-        ///**
-        // * GLTF loading 
-        // */
-        //const gltfLoader = new GLTFLoader()
-        //
-        //gltfLoader.load(
-        //    'models/earth.gltf',
-        //    (gltf) =>
-        //    {
-        //        while(gltf.scene.children.length)
-        //        {
-        //            const child = gltf.scene.children[0]
-        //            scene.add(child)
-        //        }
-        //    }
-        //)
-
-
         /**
          * Object
          */
@@ -118,10 +98,6 @@ export default class Webgl {
 
         }
 
-
-
-
-
         /**
          * Renderer
          */
@@ -130,13 +106,6 @@ export default class Webgl {
         renderer.setPixelRatio(window.devicePixelRatio)
         const canvasPosition = document.querySelector('.canvas-position')
         canvasPosition.appendChild(renderer.domElement)
-
-        ///**
-        // * Camera controls
-        // */
-        const cameraControls = new OrbitControls(camera, renderer.domElement)
-        cameraControls.zoomSpeed = 0.3
-        cameraControls.enableDamping = true
 
         /**
          * Resize
@@ -162,7 +131,6 @@ export default class Webgl {
 
             window.requestAnimationFrame(loop)
 
-            cameraControls.update()
             renderer.render(scene, camera)
             
         }

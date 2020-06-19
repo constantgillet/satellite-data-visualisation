@@ -14,6 +14,8 @@ fetch(`${API_URL}/api/getAllSatellites.php`)
     satellites = data
     console.log(data[0])
 
+    //On applique les mets sur les filtres
+    const filters = new Filters(document.querySelector('.filters'), satellites)
     const satellitesNumber = document.querySelector('#satellites-number')
     satellitesNumber.innerText = satellites.length
 
@@ -23,13 +25,6 @@ fetch(`${API_URL}/api/getAllSatellites.php`)
 (error) => {     
     console.error(error)       
 })
-
-
-
-
-//On applique les mets sur les filtres
-const filters = new Filters(document.querySelector('.filters'))
-
 
 
 //On met les petits points de satellites dans la div

@@ -1,7 +1,7 @@
 .filters {
     width: 276px;
 
-    &.active {
+    &.active-filter {
         display: block;
     }
 
@@ -83,7 +83,7 @@
         transition-timing-function: ease-in-out;
         transition-delay: 0s;
 
-        &.active {
+        &.active-filter {
             transform: translateX(0%);
         }
     }

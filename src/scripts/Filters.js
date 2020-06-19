@@ -25,7 +25,7 @@ export default class Filters {
 
         this.toggleFiltersButton.addEventListener('click', () => {
 
-            this.form.classList.toggle('active')
+            this.form.classList.toggle('active-filter')
         })
     }
 
@@ -37,15 +37,11 @@ export default class Filters {
 
             buttonSelectCountry.classList.toggle('active')
             this.countrySelect.classList.toggle('active')
-<<<<<<< HEAD
 
+            // if (this.form.classList.contains('active') == true) {
 
-            if (this.form.open) {
-
-                console.log('form');
-            }
-=======
->>>>>>> 21e94f2584dba05f167d7dcd753065e8a8b69a0f
+            //     this.form.classList.remove('active')
+            // }
         })
     }
 
@@ -55,13 +51,9 @@ export default class Filters {
 
         buttonSelectUsual.addEventListener('click', (_event) => {
             _event.preventDefault()
-<<<<<<< HEAD
 
             buttonSelectUsual.classList.toggle('active')
 
-=======
-            buttonSelectUsual.classList.toggle('active')
->>>>>>> 21e94f2584dba05f167d7dcd753065e8a8b69a0f
             this.usualSelect.classList.toggle('active')
         })
     }
@@ -73,11 +65,6 @@ export default class Filters {
             _event.preventDefault()
             buttonSelectLaucherType.classList.toggle('active')
             this.laucherTypeSelect.classList.toggle('active')
-<<<<<<< HEAD
-
-=======
->>>>>>> 21e94f2584dba05f167d7dcd753065e8a8b69a0f
-
         })
     }
 
@@ -101,3 +88,4 @@ export default class Filters {
         })
     }
 }
+

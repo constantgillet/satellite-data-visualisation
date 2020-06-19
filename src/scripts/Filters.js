@@ -9,7 +9,7 @@ export default class Filters {
         this.laucherTypeSelect = this.element.querySelector('#js-select-laucher-type')
         this.laucherPlaceSelect = this.element.querySelector('#js-select-laucher-place')
         this.masseSelect = this.element.querySelector('#js-select-masse')
-
+        this.notSelectedOptions = []
 
         //Methods
         this.clickToggleFiltersButton()
@@ -19,13 +19,55 @@ export default class Filters {
         this.clickLaucherPlaceSelect()
         this.clickMasseSelect()
 
+        this.optionClick()
     }
 
+    optionClick = () => {
+        const optionsElements = this.form.querySelectorAll('.filters__select-input option')
+        
+        for (let index = 0; index < optionsElements.length; index++) {
+            const option = optionsElements[index]
+            option.addEventListener('click', () => {
+                if (this.notSelectedOptions.includes(index)) {
+                    this.removeItem(this.notSelectedOptions, index)
+                } else {
+                    this.notSelectedOptions.push(index)
+                }
+
+                console.log(this.notSelectedOptions)
+                let i = 0
+                optionsElements.forEach(_element => {
+                   
+                   if (this.notSelectedOptions.includes(i)) {
+                       _element.selected = false
+                   } else {
+                        _element.selected = true
+                   }
+                   i++
+                })
+                
+                this.applyFilters()
+            })
+        }
+    }
+
+    applyFilters = () => {
+    
+    }
+
+    removeItem = (array, item) => {
+        for(var i in array){
+            if(array[i]==item){
+                array.splice(i,1);
+                break;
+            }
+        }
+    }
     clickToggleFiltersButton = () => {
 
         this.toggleFiltersButton.addEventListener('click', () => {
 
-            this.form.classList.toggle('active')
+            this.form.classList.toggle('active-filter')
         })
     }
 
@@ -37,6 +79,11 @@ export default class Filters {
 
             buttonSelectCountry.classList.toggle('active')
             this.countrySelect.classList.toggle('active')
+
+            // if (this.form.classList.contains('active') == true) {
+
+            //     this.form.classList.remove('active')
+            // }
         })
     }
 
@@ -48,7 +95,6 @@ export default class Filters {
             _event.preventDefault()
 
             buttonSelectUsual.classList.toggle('active')
-
             this.usualSelect.classList.toggle('active')
         })
     }
@@ -60,7 +106,6 @@ export default class Filters {
             _event.preventDefault()
             buttonSelectLaucherType.classList.toggle('active')
             this.laucherTypeSelect.classList.toggle('active')
-
         })
     }
 
@@ -84,3 +129,4 @@ export default class Filters {
         })
     }
 }
+

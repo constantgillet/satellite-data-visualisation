@@ -1,7 +1,7 @@
 .filters {
     width: 276px;
 
-    &.active {
+    &.active-filter {
         display: block;
     }
 
@@ -79,7 +79,7 @@
     &__form {
         transform: translateX(-150%);
 
-        &.active {
+        &.active-filter {
             transform: translateX(0%);
             transition-property: transform;
             transition-duration: 0.3s;

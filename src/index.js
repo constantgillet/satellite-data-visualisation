@@ -6,6 +6,7 @@ import { API_URL } from './scripts/config'
 //On demande les satellites depuis l'API
 
 let satellites
+const webgl = new Webgl
 
 fetch(`${API_URL}/api/getAllSatellites.php`)
 .then(res => res.json())
@@ -16,9 +17,11 @@ fetch(`${API_URL}/api/getAllSatellites.php`)
     //On applique les mets sur les filtres
     const filters = new Filters(document.querySelector('.filters'), satellites)
     const satellitesNumber = document.querySelector('#satellites-number')
+    
+    satellitesNumber.innerText = satellites.length
 
-    //On applique les mets sur les filtres
-    const satellitesContainer = new SatellitesContainer(document.querySelector('.satellites-container'), satellites.length)
+
+
 },
 (error) => {     
     console.error(error)       

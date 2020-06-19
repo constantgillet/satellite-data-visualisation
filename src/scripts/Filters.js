@@ -24,7 +24,7 @@ export default class Filters {
 
     optionClick = () => {
         const optionsElements = this.form.querySelectorAll('.filters__select-input option')
-        
+
         for (let index = 0; index < optionsElements.length; index++) {
             const option = optionsElements[index]
             option.addEventListener('click', () => {
@@ -37,28 +37,28 @@ export default class Filters {
                 console.log(this.notSelectedOptions)
                 let i = 0
                 optionsElements.forEach(_element => {
-                   
-                   if (this.notSelectedOptions.includes(i)) {
-                       _element.selected = false
-                   } else {
+
+                    if (this.notSelectedOptions.includes(i)) {
+                        _element.selected = false
+                    } else {
                         _element.selected = true
-                   }
-                   i++
+                    }
+                    i++
                 })
-                
+
                 this.applyFilters()
             })
         }
     }
 
     applyFilters = () => {
-    
+
     }
 
     removeItem = (array, item) => {
-        for(var i in array){
-            if(array[i]==item){
-                array.splice(i,1);
+        for (var i in array) {
+            if (array[i] == item) {
+                array.splice(i, 1);
                 break;
             }
         }
@@ -95,6 +95,10 @@ export default class Filters {
             _event.preventDefault()
 
             buttonSelectUsual.classList.toggle('active')
+<<<<<<< HEAD
+
+=======
+>>>>>>> 86c42212d66df76ef30fc6da42b9e6b251f7bb6b
             this.usualSelect.classList.toggle('active')
         })
     }

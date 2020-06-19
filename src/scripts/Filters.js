@@ -95,10 +95,6 @@ export default class Filters {
             _event.preventDefault()
 
             buttonSelectUsual.classList.toggle('active')
-<<<<<<< HEAD
-
-=======
->>>>>>> 86c42212d66df76ef30fc6da42b9e6b251f7bb6b
             this.usualSelect.classList.toggle('active')
         })
     }

@@ -30,84 +30,119 @@
                                 class="filters__delete-button__icon"></div></button>
                     </div>
                     <form class="filters__form">
-                        <button class="filters__button" id="js-button-select-country">Pays d'origine <i
+                        <button class="filters__button" id="js-button-select-country">Pays d'origine<i
                                 class="extent-icon"></i></button>
                         <select multiple="multiple" name="countries" class="filters__select-input"
                             id="js-select-country">
-                            <option value="Vietnam" selected>Afrique du sud</option>
-                            <option value="Algeria" selected>Algérie</option>
-                            <option value="Germany" selected>Allemagne</option>
-                            <option value="Saudi Arabia" selected>Arabie Saoudite</option>
-                            <option value="Australia" selected>Australie</option>
-                            <option value="Austria" selected>Autriche</option>
-                            <option value="Azerbaijan" selected>Azerbaïdjan</option>
-                            <option value="Argentina" selected>Argentine</option>
-                            <option value="Bangladesh" selected>Bangladesh</option>
-                            <option value="Belgium" selected>Belgique</option>
-                            <option value="Bhutan" selected>Bhoutan</option>
-                            <option value="Belarus" selected>Biélorussie</option>
-                            <option value="Bolivia" selected>Bolivie</option>
-                            <option value="Brazil" selected>Brésil</option>
-                            <option value="Bulgaria" selected>Bulgarie</option>
-                            <option value="Canada" selected>Canada</option>
-                            <option value="Chile" selected>Chili</option>
-                            <option value="China" selected>Chine</option>
-                            <option value="Colombia" selected>Colombie</option>
-                            <option value="South Korea" selected>Corée du Sud</option>
-                            <option value="Denmark" selected>Danemark</option>
-                            <option value="Egypt" selected>Égypte</option>
-                            <option value="United Arab Emirates" selected>Émirats arabes unis</option>
-                            <option value="Ecuador" selected>Équateur</option>
-                            <option value="Spain" selected>Espagne</option>
-                            <option value="USA" selected>États-Unis</option>
-                            <option value="Ethiopia" selected>Éthiopie</option>
-                            <option value="ESA" selected>Europe (ESA)</option>
-                            <option value="Finland" selected>Finlande</option>
-                            <option value="France" selected>France</option>
-                            <option value="Greece" selected>Grèce</option>
-                            <option value="Hungary" selected>Hongrie</option>
-                            <option value="India" selected>Inde</option>
-                            <option value="Indonesia" selected>Indonésie</option>
-                            <option value="Iran" selected>Iran</option>
-                            <option value="Iraq" selected>Irak</option>
-                            <option value="Israel" selected>Israël</option>
-                            <option value="Italy" selected>Italie</option>
-                            <option value="Japan" selected>Japon</option>
-                            <option value="Jordan" selected>Jordanie</option>
-                            <option value="Kazakhstan" selected>Kazakhstan</option>
-                            <option value="Laos" selected>Laos</option>
-                            <option value="Latvia" selected>Lettonie</option>
-                            <option value="Lithuania" selected>Lituanie</option>
-                            <option value="Luxembourg" selected>Luxembourg</option>
-                            <option value="Malaysia" selected>Malaisie</option>
-                            <option value="Morocco" selected>Maroc</option>
-                            <option value="Mexico" selected>Mexique</option>
-                            <option value="Monaco" selected>Monaco</option>
-                            <option value="Multinational" selected>Multinational</option>
-                            <option value="Nepal" selected>Népal</option>
-                            <option value="Nigeria" selected>Nigéria</option>
-                            <option value="Norway" selected>Norvège</option>
-                            <option value="Pakistan" selected>Pakistan</option>
-                            <option value="Netherlands" selected>Pays-Bas</option>
-                            <option value="Peru" selected>Pérou</option>
-                            <option value="Philippines" selected>Philippines</option>
-                            <option value="Poland" selected>Pologne</option>
-                            <option value="Qatar" selected>Qatar</option>
-                            <option value="Czech Republic" selected>République Tchèque</option>
-                            <option value="United Kingdom" selected>Royaume-Uni</option>
-                            <option value="Russia" selected>Russie</option>
-                            <option value="Singapore" selected>Singapour</option>
-                            <option value="Sudan" selected>Soudan</option>
-                            <option value="Sri Lanka" selected>Sri Lanka</option>
-                            <option value="Sweden" selected>Suède</option>
-                            <option value="Switzerland" selected>Suisse</option>
-                            <option value="Taiwan" selected>Taiwan</option>
-                            <option value="Thailand" selected>Thaïlande</option>
-                            <option value="Turkmenistan" selected>Turkménistan</option>
-                            <option value="Turkey" selected>Turquie</option>
-                            <option value="Ukraine" selected>Ukraine</option>
-                            <option value="Venezuela" selected>Venezuela</option>
-                            <option value="Vietnam" selected>Vietnam</option>
+                            <option class="selected__option__country__Vietnam" value="Vietnam" selected>Afrique du sud
+                            </option>
+                            <option class="selected__option__country__Algeria" value="Algeria" selected>Algérie</option>
+                            <option class="selected__option__country__Germany" value="Germany" selected>Allemagne
+                            </option>
+                            <option class="selected__option__country__Saudi Arabia" value="Saudi Arabia" selected>Arabie
+                                Saoudite</option>
+                            <option class="selected__option__country__Australia" value="Australia" selected>Australie
+                            </option>
+                            <option class="selected__option__country__Austria" value="Austria" selected>Autriche
+                            </option>
+                            <option class="selected__option__country__Azerbaijan" value="Azerbaijan" selected>
+                                Azerbaïdjan</option>
+                            <option class="selected__option__country__Argentina" value="Argentina" selected>Argentine
+                            </option>
+                            <option class="selected__option__country__Bangladesh" value="Bangladesh" selected>Bangladesh
+                            </option>
+                            <option class="selected__option__country__Belgium" value="Belgium" selected>Belgique
+                            </option>
+                            <option class="selected__option__country__Bhutan" value="Bhutan" selected>Bhoutan</option>
+                            <option class="selected__option__country__Belarus" value="Belarus" selected>Biélorussie
+                            </option>
+                            <option class="selected__option__country__Bolivia" value="Bolivia" selected>Bolivie</option>
+                            <option class="selected__option__country__Brazil" value="Brazil" selected>Brésil</option>
+                            <option class="selected__option__country__Bulgaria" value="Bulgaria" selected>Bulgarie
+                            </option>
+                            <option class="selected__option__country__Canada" value="Canada" selected>Canada</option>
+                            <option class="selected__option__country__Chile" value="Chile" selected>Chili</option>
+                            <option class="selected__option__country__China" value="China" selected>Chine</option>
+                            <option class="selected__option__country__Colombia" value="Colombia" selected>Colombie
+                            </option>
+                            <option class="selected__option__country__South-Korea" value="South Korea" selected>Corée du
+                                Sud</option>
+                            <option class="selected__option__country__Denmark" value="Denmark" selected>Danemark
+                            </option>
+                            <option class="selected__option__country__Egypt" value="Egypt" selected>Égypte</option>
+                            <option class="selected__option__country__United-Arab-Emirates" value="United Arab Emirates"
+                                selected>Émirats arabes unis</option>
+                            <option class="selected__option__country__Ecuador" value="Ecuador" selected>Équateur
+                            </option>
+                            <option class="selected__option__country__Spain" value="Spain" selected>Espagne</option>
+                            <option class="selected__option__country__USA" value="USA" selected>États-Unis</option>
+                            <option class="selected__option__country__Ethiopia" value="Ethiopia" selected>Éthiopie
+                            </option>
+                            <option class="selected__option__country__ESA" value="ESA" selected>Europe (ESA)</option>
+                            <option class="selected__option__country__Finland" value="Finland" selected>Finlande
+                            </option>
+                            <option class="selected__option__country__France" value="France" selected>France</option>
+                            <option class="selected__option__country__Greece" value="Greece" selected>Grèce</option>
+                            <option class="selected__option__country__Hungary" value="Hungary" selected>Hongrie</option>
+                            <option class="selected__option__country__India" value="India" selected>Inde</option>
+                            <option class="selected__option__country__Indonesia" value="Indonesia" selected>Indonésie
+                            </option>
+                            <option class="selected__option__country__Iran" value="Iran" selected>Iran</option>
+                            <option class="selected__option__country__Iraq" value="Iraq" selected>Irak</option>
+                            <option class="selected__option__country__Israel" value="Israel" selected>Israël</option>
+                            <option class="selected__option__country__Italy" value="Italy" selected>Italie</option>
+                            <option class="selected__option__country__Japan" value="Japan" selected>Japon</option>
+                            <option class="selected__option__country__Jordan" value="Jordan" selected>Jordanie</option>
+                            <option class="selected__option__country__Kazakhstan" value="Kazakhstan" selected>Kazakhstan
+                            </option>
+                            <option class="selected__option__country__Laos" value="Laos" selected>Laos</option>
+                            <option class="selected__option__country__Latvia" value="Latvia" selected>Lettonie</option>
+                            <option class="selected__option__country__Lithuania" value="Lithuania" selected>Lituanie
+                            </option>
+                            <option class="selected__option__country__Luxembourg" value="Luxembourg" selected>Luxembourg
+                            </option>
+                            <option class="selected__option__country__Malaysia" value="Malaysia" selected>Malaisie
+                            </option>
+                            <option class="selected__option__country__Morocco" value="Morocco" selected>Maroc</option>
+                            <option class="selected__option__country__Mexico" value="Mexico" selected>Mexique</option>
+                            <option class="selected__option__country__Monaco" value="Monaco" selected>Monaco</option>
+                            <option class="selected__option__country__Multinational" value="Multinational" selected>
+                                Multinational</option>
+                            <option class="selected__option__country__Nepal" value="Nepal" selected>Népal</option>
+                            <option class="selected__option__country__Nigeria" value="Nigeria" selected>Nigéria</option>
+                            <option class="selected__option__country__Norway" value="Norway" selected>Norvège</option>
+                            <option class="selected__option__country__Pakistan" value="Pakistan" selected>Pakistan
+                            </option>
+                            <option class="selected__option__country__Netherlands" value="Netherlands" selected>Pays-Bas
+                            </option>
+                            <option class="selected__option__country__Peru" value="Peru" selected>Pérou</option>
+                            <option class="selected__option__country__Philippines" value="Philippines" selected>
+                                Philippines</option>
+                            <option class="selected__option__country__Poland" value="Poland" selected>Pologne</option>
+                            <option class="selected__option__country__Qatar" value="Qatar" selected>Qatar</option>
+                            <option class="selected__option__country__Czech-Republic" value="Czech Republic" selected>
+                                République Tchèque</option>
+                            <option class="selected__option__country__United Kingdom" value="United Kingdom" selected>
+                                Royaume-Uni</option>
+                            <option class="selected__option__country__Russia" value="Russia" selected>Russie</option>
+                            <option class="selected__option__country__Singapore" value="Singapore" selected>Singapour
+                            </option>
+                            <option class="selected__option__country__Sudan" value="Sudan" selected>Soudan</option>
+                            <option class="selected__option__country__Sri-Lanka" value="Sri Lanka" selected>Sri Lanka
+                            </option>
+                            <option class="selected__option__country__Sweden" value="Sweden" selected>Suède</option>
+                            <option class="selected__option__country__Switzerland" value="Switzerland" selected>Suisse
+                            </option>
+                            <option class="selected__option__country__Taiwan" value="Taiwan" selected>Taiwan</option>
+                            <option class="selected__option__country__Thailand" value="Thailand" selected>Thaïlande
+                            </option>
+                            <option class="selected__option__country__Turkmenistan" value="Turkmenistan" selected>
+                                Turkménistan</option>
+                            <option class="selected__option__country__Turkey" value="Turkey" selected>Turquie</option>
+                            <option class="selected__option__country__Ukraine" value="Ukraine" selected>Ukraine</option>
+                            <option class="selected__option__country__Venezuela" value="Venezuela" selected>Venezuela
+                            </option>
+                            <option class="selected__option__country__Vietnam" value="Vietnam" selected>Vietnam</option>
                         </select>
                         <button class="filters__button" id="js-button-select-usual">Utilisation <i
                                 class="extent-icon"></i></button>
@@ -210,9 +245,9 @@
                             <option value="audi" selected>Vandenberg Air Force Base</option>
                             <option value="audi" selected>Wallops Island Flight Facility</option>
                         </select>
-                        <button class="filters__button" id="js-button-select-masse">Masse <i
+                        <button class="filters__button" id="js-button-select-mass">Masse <i
                                 class="extent-icon"></i></button>
-                        <select multiple="multiple" name="masse" class="filters__select-input" id="js-select-masse">
+                        <select multiple="multiple" name="mass" class="filters__select-input" id="js-select-mass">
                             <option value="volvo" selected>inf. 50kg</option>
                             <option value="saab" selected>50kg - 549kg</option>
                             <option value="mercedes" selected>550kg - 1 049kg</option>
@@ -233,4 +268,4 @@
     </main>
 </body>
 
-</html>
+</html>²

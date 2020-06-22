@@ -8,7 +8,8 @@ export default class Filters {
         this.usualSelect = this.element.querySelector('#js-select-usual')
         this.laucherTypeSelect = this.element.querySelector('#js-select-laucher-type')
         this.laucherPlaceSelect = this.element.querySelector('#js-select-laucher-place')
-        this.masseSelect = this.element.querySelector('#js-select-masse')
+        this.massSelect = this.element.querySelector('#js-select-mass')
+        this.selectedOption = this.element.querySelector('.selected__option__country')
         this.notSelectedOptions = []
         this.updateSatellites = updateSatellites
 
@@ -18,9 +19,10 @@ export default class Filters {
         this.clickUsualSelect()
         this.clickLaucherTypeSelect()
         this.clickLaucherPlaceSelect()
-        this.clickMasseSelect()
+        this.clickMassSelect()
         this.clickButtonDeleteFilters()
         this.optionClick()
+        this.clickSelectedOption()
     }
 
     clickButtonDeleteFilters = () => {
@@ -51,7 +53,7 @@ export default class Filters {
                     this.notSelectedOptions.push(option.value)
                 }
 
-                
+
                 let i = 0
                 optionsElements.forEach(_element => {
 
@@ -70,7 +72,7 @@ export default class Filters {
 
     applyFilters = () => {
         const newSatellites = []
-        
+
         this.satellites.forEach(satelliteData => {
             let isAllowed = true
 
@@ -188,14 +190,25 @@ export default class Filters {
         })
     }
 
-    clickMasseSelect = () => {
-        const buttonSelectMasse = this.form.querySelector('#js-button-select-masse')
+    clickMassSelect = () => {
+        const buttonSelectMass = this.form.querySelector('#js-button-select-mass')
 
-        buttonSelectMasse.addEventListener('click', (_event) => {
+        buttonSelectMass.addEventListener('click', (_event) => {
             _event.preventDefault()
-            buttonSelectMasse.classList.toggle('active')
-            this.masseSelect.classList.toggle('active')
+            buttonSelectMass.classList.toggle('active')
+            this.massSelect.classList.toggle('active')
+        })
+    }
+
+    clickSelectedOption = () => {
+        const selectedOption = this.element.querySelector('.selected__option__country')
+
+        selectedOption.addEventListener('click', (_event) => {
+            _event.preventDefault()
+            this.selectedOption.classList.toggle('active')
+
         })
     }
 }
+
 

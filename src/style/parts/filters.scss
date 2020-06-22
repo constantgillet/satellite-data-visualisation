@@ -182,24 +182,20 @@
 
         option {
             font-weight: 300;
-            font-size: 14px;
+            font-size: 13px;
             line-height: 10px;
-            height: 18px;
+            height: 25px;
             background-color: #10698C;
+            padding-top: 13px;
         }
         
         option:checked {
             color: white;
             background-color: #10698C;
         }
-        
-        // option::after {
-            // width: 3px;
-            // content:url(/images/check.png);
-            
-         
-        
-        // }
-       
     }
 } 
+
+.is-active:after {
+    content: url(/images/check.png);
+}

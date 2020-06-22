@@ -9,7 +9,7 @@ export default class Filters {
         this.laucherTypeSelect = this.element.querySelector('#js-select-laucher-type')
         this.laucherPlaceSelect = this.element.querySelector('#js-select-laucher-place')
         this.massSelect = this.element.querySelector('#js-select-mass')
-        this.selectedOption = this.element.querySelector('.selected__option__country')
+        this.clickcheckedOption = this.element.querySelectorAll('.checked__option')
         this.notSelectedOptions = []
         this.updateSatellites = updateSatellites
 
@@ -22,7 +22,7 @@ export default class Filters {
         this.clickMassSelect()
         this.clickButtonDeleteFilters()
         this.optionClick()
-        this.clickSelectedOption()
+        this.clickCheckedOption()
     }
 
     clickButtonDeleteFilters = () => {
@@ -200,14 +200,24 @@ export default class Filters {
         })
     }
 
-    clickSelectedOption = () => {
-        const selectedOption = this.element.querySelector('.selected__option__country')
+    clickCheckedOption = () => {
+        const checkedOption = this.form.querySelectorAll('.checked__option')
 
-        selectedOption.addEventListener('click', (_event) => {
+        checkedOption.addEventListener('click', (_event) => {
             _event.preventDefault()
-            this.selectedOption.classList.toggle('active')
-
+            checkedOption.classList.toggle('is-active')
+            console.log(checkedOption.classList);
+            
         })
+
+        for (let check = 0; check < checkedOption.length; check++) {
+            const checkOption = checkedOption[check]
+            checkOption.addEventListener('click', () => {
+                _event.preventDefault()
+                checkedOption.classList.toggle('is-active')
+                console.log(checkedOption.classList);
+            })
+        }
     }
 }
 

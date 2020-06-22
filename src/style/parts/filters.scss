@@ -193,17 +193,9 @@
             color: white;
             background-color: #10698C;
         }
-        // option::after {
-            // width: 3px;
-            // content:url(/images/check.png);
-            
-         
-        
-        // }
-        
-         &.active {
-            content:url(/images/check.png);
-        }
-       
     }
 } 
+
+.is-active:after {
+    content: url(/images/check.png);
+}

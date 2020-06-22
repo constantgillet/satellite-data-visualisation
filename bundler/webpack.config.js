@@ -13,10 +13,13 @@ module.exports = {
         host: '0.0.0.0', //Lance sur le serveur local
         useLocalIp: true
     },
-    entry: path.resolve(__dirname, '../src/index.js'),
+    entry: {
+        index: path.resolve(__dirname, '../src/index.js'),
+        map: path.resolve(__dirname, '../src/map.js')
+    },
     output:
     {
-        filename: 'bundle.[hash].js',
+        filename: '[name].bundle.[hash].js',
         path: path.resolve(__dirname, '../dist')
     },
     plugins:
@@ -26,11 +29,15 @@ module.exports = {
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, '../src/index.html'),
+            inject: true,
+            chunks: ['index'],
             filename: 'index.html'
         }),
         new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, '../src/page2.html'),
-            filename: 'page2.html'
+            template: path.resolve(__dirname, '../src/map.html'),
+            inject: true,
+            chunks: ['map'],
+            filename: 'map.html'
         })
     ],
     module:

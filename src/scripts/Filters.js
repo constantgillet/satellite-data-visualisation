@@ -34,9 +34,9 @@ export default class Filters {
 
             const optionsElements = this.form.querySelectorAll('.filters__select-input option')
 
-            optionsElements.forEach(optionElement => {
-                optionElement.selected = true
-            })
+            // optionsElements.forEach(optionElement => {
+            //     optionElement.selected = true
+            // })
         })
     }
 
@@ -49,8 +49,10 @@ export default class Filters {
 
                 if (this.notSelectedOptions.includes(option.value)) {
                     this.removeItem(this.notSelectedOptions, option.value)
+                    option.selected = false
                 } else {
                     this.notSelectedOptions.push(option.value)
+                    option.selected = true
                 }
 
 
@@ -58,10 +60,8 @@ export default class Filters {
                 optionsElements.forEach(_element => {
 
                     if (this.notSelectedOptions.includes(_element.value)) {
-                        _element.selected = false
-                    } else {
                         _element.selected = true
-                    }
+                    } 
                     i++
                 })
                 console.log(this.notSelectedOptions)

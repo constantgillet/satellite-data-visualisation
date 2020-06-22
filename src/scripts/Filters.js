@@ -79,6 +79,39 @@ export default class Filters {
                     isAllowed = false
                 } else if (satelliteData.launch_vehicle.includes(notSelectedOption)) {
                     isAllowed = false
+                } else if(notSelectedOption.includes('mass') && parseFloat(satelliteData.launch_mass)) {
+
+                    const mass = parseFloat(satelliteData.launch_mass)
+
+                    if (notSelectedOption == 'mass__less__50') {
+                        if (mass < 50) {
+                            isAllowed = false 
+                        }
+                    } else if (notSelectedOption == 'mass__50__549') {
+                        if (mass > 50 && mass < 549) {
+                            isAllowed = false 
+                        }
+                    } else if (notSelectedOption == 'mass__550__1049') {
+                        if (mass > 550 && mass < 1049) {
+                            isAllowed = false 
+                        }
+                    } else if (notSelectedOption == 'mass__1050__2999') {
+                        if (mass > 1050 && mass < 2999) {
+                            isAllowed = false 
+                        }
+                    } else if (notSelectedOption == 'mass__3000__6000') {
+                        if (mass > 3000 && mass < 6000) {
+                            isAllowed = false 
+                        }
+                    } else if (notSelectedOption == 'mass__6000__9000') {
+                        if (mass > 6000 && mass < 9000) {
+                            isAllowed = false 
+                        }
+                    } else if (notSelectedOption == 'mass__more__9000') {
+                        if (mass > 9000) {
+                            isAllowed = false 
+                        }
+                    }
                 }
             })
 

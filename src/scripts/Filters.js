@@ -34,9 +34,9 @@ export default class Filters {
 
             const optionsElements = this.form.querySelectorAll('.filters__select-input option')
 
-            // optionsElements.forEach(optionElement => {
-            //     optionElement.selected = true
-            // })
+            optionsElements.forEach(optionElement => {
+                optionElement.selected = false
+            })
         })
     }
 

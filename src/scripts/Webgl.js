@@ -100,8 +100,8 @@ export default class Webgl {
             const satellite = new THREE.Mesh( satelliteGeometry, satelliteMaterial );
             satellites.add( satellite );
 
-            var orbitRadius = THREE.Math.randFloatSpread(5) + 6.8; // for example
-            var date;
+            let orbitRadius = THREE.Math.randFloatSpread(5) + 6.8; // for example
+            let date;
             
             date = THREE.Math.randFloatSpread(10);
             satellite.position.set(

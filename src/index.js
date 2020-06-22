@@ -11,7 +11,12 @@ const satellitesNumber = document.querySelector('#satellites-number')
 
 const updateSatellites = (newSatellites) => {
     //console.log(newSatellites)
-    satellitesNumber.innerText = newSatellites.length
+    if (newSatellites.length == satellites.length) {
+        satellitesNumber.innerText = satellites.length
+    } else {
+        satellitesNumber.innerText = satellites.length - newSatellites.length 
+    }
+    
     webgl.updateColors(satellites.length - newSatellites.length)
 }
 

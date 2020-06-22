@@ -201,23 +201,23 @@ export default class Filters {
     }
 
     clickCheckedOption = () => {
-        const checkedOption = this.form.querySelectorAll('.checked__option')
+        // const checkedOption = this.form.querySelectorAll('.checked__option')
 
-        checkedOption.addEventListener('click', (_event) => {
-            _event.preventDefault()
-            checkedOption.classList.toggle('is-active')
-            console.log(checkedOption.classList);
+        // checkedOption.addEventListener('click', (_event) => {
+        //     _event.preventDefault()
+        //     checkedOption.classList.toggle('is-active')
+        //     console.log(checkedOption.classList);
             
-        })
+        // })
 
-        for (let check = 0; check < checkedOption.length; check++) {
-            const checkOption = checkedOption[check]
-            checkOption.addEventListener('click', () => {
-                _event.preventDefault()
-                checkedOption.classList.toggle('is-active')
-                console.log(checkedOption.classList);
-            })
-        }
+        // for (let check = 0; check < checkedOption.length; check++) {
+        //     const checkOption = checkedOption[check]
+        //     checkOption.addEventListener('click', () => {
+        //         _event.preventDefault()
+        //         checkedOption.classList.toggle('is-active')
+        //         console.log(checkedOption.classList);
+        //     })
+        // }
     }
 }
 

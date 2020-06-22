@@ -188,14 +188,17 @@
             background-color: #10698C;
             padding-top: 13px;
         }
-        
+
         option:checked {
-            color: white;
-            background-color: #10698C;
+            background-color: none !important;
+            
+            &:after {
+                content: url(/images/check.png);
+                margin-left: 5px;
+            }
+            
         }
     }
 } 
 
-.is-active:after {
-    content: url(/images/check.png);
-}
+

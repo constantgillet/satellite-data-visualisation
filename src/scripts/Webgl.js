@@ -12,18 +12,21 @@ export default class Webgl {
 
     updateColors = (numberOfSatellitesSelected) => {
         this.numberOfSatellitesSelected = numberOfSatellitesSelected
-
         const satellites = this.scene.children[3].children
-        //console.log(this.scene.children[3].children)
 
-        satellites.forEach(satellite => {
-            satellite.material.color = {r: 0, g: 255, b: 255}
-        })
+        if(this.numberOfSatellitesSelected != 0) {
+            satellites.forEach(satellite => {
+                satellite.material.opacity = 0
+            })
 
-        for (let i = 0; i < this.numberOfSatellitesSelected; i++) {
-            const satellite = this.scene.children[3].children[i]
-
-            satellite.material.color = {r: 1, g: 0, b: 0}
+            for (let i = 0; i < this.numberOfSatellitesSelected; i++) {
+                const satellite = this.scene.children[3].children[i]
+                satellite.material.opacity = 1
+            }
+        } else {
+            satellites.forEach(satellite => {
+                satellite.material.opacity = 1
+            })
         }
     }
 
@@ -84,7 +87,7 @@ export default class Webgl {
         const material = new THREE.MeshMatcapMaterial(
             { 
                 map: earthTexture,
-                normalMap: earthNormalMap,
+                normalMap: earthNormalMap
             });
         const sphere = new THREE.Mesh( geometry, material );
         this.scene.add( sphere );
@@ -95,7 +98,8 @@ export default class Webgl {
         for(let i=0; i<2600; i++){
             const satelliteGeometry = new THREE.SphereGeometry( 0.02, 10, 10 );
             const satelliteMaterial = new THREE.MeshBasicMaterial({
-                color: 0x7FE7F1
+                color: 0x7FE7F1,
+                transparent: true
             });
             const satellite = new THREE.Mesh( satelliteGeometry, satelliteMaterial );
             satellites.add( satellite );

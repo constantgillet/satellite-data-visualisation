@@ -160,9 +160,10 @@ main {
 .parts-titles{
     display: flex;
     justify-content: space-between;
-    width: 50%;
+    width: 800px;
     font-size: 24px;
     align-items: center;
+    
     &__map-link{
         margin-left: 20px;
         background: #10698C;

@@ -13,6 +13,7 @@ let currentElementIndex = 0
 const changeContent = (ElementIndex) => {
     satelliteContents[currentElementIndex].classList.remove('is-active')
     satelliteContents[ElementIndex].classList.add('is-active')
+
     currentElementIndex = ElementIndex
 }
 

@@ -163,7 +163,7 @@ main {
     width: 800px;
     font-size: 24px;
     align-items: center;
-    
+
     &__map-link{
         margin-left: 20px;
         background: #10698C;
@@ -203,6 +203,11 @@ a:hover{
     height: 70%;
     top: 20%;
     left: 10%;
+    opacity: 0;
+
+    &.is-active {
+        opacity: 1;
+    }
 
     &__text{
         display: flex;
@@ -228,8 +233,6 @@ a:hover{
         display: flex;
         justify-content: space-between;
         width: 80%;
-        opacity: 0;
-        transform: translateX(-500px);
     }
 
     &__countries{
@@ -237,14 +240,12 @@ a:hover{
         justify-content: space-between;
         flex-direction: row-reverse;
         width: 80%;
-        opacity: 0;
     }
 
     &__orbite{
         display: flex;
         justify-content: space-between;
         width: 80%;
-        opacity: 0;
     }
 
     &__life-duration{
@@ -252,7 +253,6 @@ a:hover{
         justify-content: space-between;
         flex-direction: row-reverse;
         width: 80%;
-        opacity: 0;
     }
 
     &__buttons{

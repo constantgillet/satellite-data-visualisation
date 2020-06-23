@@ -4,109 +4,48 @@ import Disclamer from './scripts/Disclamer'
 
 const disclamer = new Disclamer()
 
-<<<<<<< HEAD
-// class partsContent {
+const satelliteContents = document.body.querySelectorAll('.satellite-content')
+const previousButton = document.body.querySelector('.parts-content__previous-button')
+const nextButton = document.body.querySelector('.parts-content__next-button')
+const partTitles = document.body.querySelectorAll('.parts-title')
+let currentElementIndex = 0
 
-//     constructor(element, options = {}) {
-//         this.element = element
-//         this.options = object.assign({}, {
-//             slidesToScroll: 1,
-//             sliderVisible: 1
-
-//         }, option)
-//         this.children = [].slice.call(element.children)
-//         this.currentItem = 0
-//         this.root = this.creatDivWhithClass('caroucel')
-//         let container = this.creatDivWhithClass('caroucel__container')
-//         container.style.width = (ration * 100) + "%"
-//         root.appendChild(container)
-//         this.element.appendChild(root)
-//         this.children.forEach((child) => {
-//             let item = this.creatDivWhithClass('caroussel__item')
-//             item.style.width = (100 / this.options.sliderVisible / ratio) + "%"
-//             item.appendChild(child)
-//             this.container.appendChild(child)
-//             return item
-//         })
-//     }
-
-//     navigationButton() {
-//         let nextButton = document.querySelector('.parts-content__next-button')
-//         let previousButton = document.querySelector('.parts-content__previous-button')
-//         nextButton.addEventListener('click', this.next.bind(this))
-//         previousButton.addEventListener('click', this.previousButton.bind(this))
-//     }
-
-//     next() {
-//         this.goToItem(this.currentItem + this.options.slidesToScroll)
-//     }
-
-//     prev() {
-//         this.goToItem(this.currentItem - this.options.slidesToScroll)
-//     }
-
-//     goToItem(index) {
-//         let translateX = index * - 100 / this.item.length
-//         this.container.style.transform = 'translate3d(' + translateX + '%,0,0)'
-//         this.currentItem = index
-//     }
-
-//     creatDivWhithClass(className) {
-//         let div = document.createElement('div')
-//         root.setAttribute('class', 'className')
-//         return div
-//     }
-
-
-
-
-//     document.addEventListener('DOMContentLoad', () => {
-
-//         new Carousel(document.querySelector('.part-content'), {
-//             sliderVisible: 3
-//         })
-//     }
-// }
-
-
-
-
-
-
-
-
-
-const printHistory = document.querySelector('.parts-content__history')
-const sliderContent = document.querySelectorAll('.part-content')
-let nextButton = document.querySelector('.parts-content__next-button')
-let previousButton = document.querySelector('.parts-content__previous-button')
-let currentContent = 0
-
-const changeContent = (contentIndex) => {
-    sliderContent[currentContent].classList.remove('is-active')
-    currentContent = contentIndex
-    sliderContent[currentContent].classList.add('is-active')
+const changeContent = (ElementIndex) => {
+    satelliteContents[currentElementIndex].classList.remove('is-active')
+    satelliteContents[ElementIndex].classList.add('is-active')
+    currentElementIndex = ElementIndex
 }
 
+for (let i = 0; i < partTitles.length; i++) {
+    const partTitle = partTitles[i]
+    
+    partTitle.addEventListener('click', (_event) => {
+        if (i != partTitles.length-1) {
+           _event.preventDefault() 
+        }
+        
+        changeContent(i)
+
+
+    })
+}
 
 nextButton.addEventListener('click', () => {
+    let nextElementIndex
 
-    changeContent(currentContent++)
-
-
+    if(currentElementIndex < satelliteContents.length-1)
+        nextElementIndex = currentElementIndex + 1
+    else
+        nextElementIndex = 0
+    changeContent(nextElementIndex)
 })
-
-
 
 previousButton.addEventListener('click', () => {
-    sliderContent.classList.toggle('is-active')
+    let previousElementIndex
+
+    if(currentElementIndex > 0)
+        previousElementIndex = currentElementIndex - 1
+    else
+    previousElementIndex = satelliteContents.length-1
+    changeContent(previousElementIndex)
 })
-
-
-
-
-
-=======
->>>>>>> ef13411b10442c15f6d7a018e9789f313d9bbf8d
-
-console.log('Index js log') 

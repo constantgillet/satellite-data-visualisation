@@ -2,8 +2,9 @@ import './style/main.scss'
 import Filters from './scripts/Filters'
 import Webgl from './scripts/Webgl'
 import { API_URL } from './scripts/config'
+import Disclamer from './scripts/Disclamer'
 
-console.log('test')
+const disclamer = new Disclamer()
 
 let satellites
 const webgl = new Webgl

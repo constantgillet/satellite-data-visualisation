@@ -216,13 +216,27 @@ a:hover{
 
     .parts-content, .active{
         opacity: 1;
+        transform: translateX(107px);
+        transition-property: transform;
+        transition-duration: 1s;
+        transition-delay: 0s;
     }
+
+    .parts-content, .is-active{
+        opacity: 1;
+        transform: translateX(2500px);
+        transition-property: transform;
+        transition-duration: 3s;
+        transition-delay: 0s;
+    }
+
 
     &__history{
         display: flex;
         justify-content: space-between;
         width: 80%;
         opacity: 0;
+        transform: translateX(-500px);
     }
 
     &__countries{

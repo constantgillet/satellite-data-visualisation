@@ -162,16 +162,28 @@ main {
     justify-content: space-between;
     width: 50%;
     font-size: 24px;
-    text-transform: uppercase;
-    
 
-    a {
-       font-weight: 300; 
+    &__map-link{
+        margin-left: 20px;
+        background: #10698C;
+        border: 2px solid #4DC3CC;
+        box-sizing: border-box;
+        box-shadow: 0px 4px 9px rgba(127, 231, 241, 0.43);
+        border-radius: 2px 2px 2px 2px;
+        color: $primaryColor;
+        font-weight: 300;
+        font-size: 18px;
+        padding: 5px 7px;
+        text-transform: uppercase;
+        vertical-align: middle;
+
+        &:hover {
+            background: #277999;
+        }
     }
 }
 
 a:hover{
-    text-decoration: underline #7FE7F1;
     cursor: url('/images/cursor.png'), auto;
 }
 

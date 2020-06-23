@@ -4,7 +4,6 @@ import Disclamer from './scripts/Disclamer'
 
 const disclamer = new Disclamer()
 
-<<<<<<< HEAD
 // class partsContent {
 
 //     constructor(element, options = {}) {
@@ -106,7 +105,5 @@ previousButton.addEventListener('click', () => {
 
 
 
-=======
->>>>>>> ef13411b10442c15f6d7a018e9789f313d9bbf8d
 
 console.log('Index js log') 

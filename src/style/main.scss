@@ -28,11 +28,20 @@ h1, h2, h3, a, label, ul, li, p, option {
     text-shadow: $mainShadow;
 }
 
-form, button, input, li, ul, option:hover{
+form, button, input, li, ul, a, option:hover{
     cursor: url('/images/cursor1.png'), pointer;
   
 }
 
+a{
+    background :linear-gradient(to top, rgba(0, 255, 255, 0.876) 0%, rgba(0, 255, 255, 0.876)4px,transparent 5px)no-repeat;
+    background-size:0 100%;
+    transition: background-size .3s;
+}
+
+a:hover{
+    background-size: 100% 100%;
+}
 
 h1 {
     font-style: normal;
@@ -162,7 +171,7 @@ main {
     justify-content: space-between;
     width: 50%;
     font-size: 24px;
-    align-items: center;
+
     &__map-link{
         margin-left: 20px;
         background: #10698C;
@@ -181,19 +190,6 @@ main {
             background: #277999;
         }
     }
-
-    .parts-title {
-        font-weight: 300;
-        line-height: 29px;
-        font-size: 24px;
-        text-align: center;
-        text-transform: uppercase;
-        text-shadow: 1px 1px 6px #7FE7F1;
-    }
-}
-
-a:hover{
-    cursor: url('/images/cursor.png'), auto;
 }
 
 .satellite-content{
@@ -222,6 +218,21 @@ a:hover{
     width: 100%;
     height: 100%;
     color: #7FE7F1;
+
+     &.active{
+        opacity: 1;
+        transition-property: transform;
+        transition-duration: 1s;
+        transition-delay: 0s;
+    }
+
+     &.is-active{
+        opacity: 1;
+        transition-property: transform;
+        transition-duration: 3s;
+        transition-delay: 0s;
+    }
+
 
     &__history{
         display: flex;

@@ -30,5 +30,8 @@
     "watch": "webpack --mode=development --watch --config ./bundler/webpack.config.js"
   },
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "^3.5.1"
+  }
 }

@@ -9,9 +9,9 @@ export default class Filters {
         this.laucherTypeSelect = this.element.querySelector('#js-select-laucher-type')
         this.laucherPlaceSelect = this.element.querySelector('#js-select-laucher-place')
         this.massSelect = this.element.querySelector('#js-select-mass')
-        this.clickcheckedOption = this.element.querySelectorAll('.checked__option')
         this.notSelectedOptions = []
         this.updateSatellites = updateSatellites
+        this.currentOpenned = null
 
         //Methods
         this.clickToggleFiltersButton()
@@ -22,7 +22,28 @@ export default class Filters {
         this.clickMassSelect()
         this.clickButtonDeleteFilters()
         this.optionClick()
-        this.clickCheckedOption()
+    }
+
+    closeAll = () => {
+        const buttonsSelect = this.form.querySelectorAll('.filters__button')
+        const selectElements = this.form.querySelectorAll('.filters__select-input')
+
+
+        for (let i = 0; i < buttonsSelect.length; i++) {
+            const buttonSelect = buttonsSelect[i]
+
+            if (i != this.currentOpenned) {
+               buttonSelect.classList.remove('active') 
+            }
+        }
+
+        for (let i = 0; i < selectElements.length; i++) {
+            const selectElement = selectElements[i]
+
+            if (i != this.currentOpenned) {
+                selectElement.classList.remove('active') 
+            }
+        }
     }
 
     clickButtonDeleteFilters = () => {
@@ -54,7 +75,6 @@ export default class Filters {
                     this.notSelectedOptions.push(option.value)
                     option.selected = true
                 }
-
 
                 let i = 0
                 optionsElements.forEach(_element => {
@@ -148,13 +168,12 @@ export default class Filters {
         buttonSelectCountry.addEventListener('click', (_event) => {
             _event.preventDefault()
 
+            this.currentOpenned = 0
+
+            this.closeAll()
+
             buttonSelectCountry.classList.toggle('active')
             this.countrySelect.classList.toggle('active')
-
-            // if (this.form.classList.contains('active') == true) {
-
-            //     this.form.classList.remove('active')
-            // }
         })
     }
 
@@ -164,6 +183,10 @@ export default class Filters {
 
         buttonSelectUsual.addEventListener('click', (_event) => {
             _event.preventDefault()
+
+            this.currentOpenned = 1
+
+            this.closeAll()
 
             buttonSelectUsual.classList.toggle('active')
             this.usualSelect.classList.toggle('active')
@@ -175,6 +198,11 @@ export default class Filters {
 
         buttonSelectLaucherType.addEventListener('click', (_event) => {
             _event.preventDefault()
+
+            this.currentOpenned = 2
+
+            this.closeAll()
+
             buttonSelectLaucherType.classList.toggle('active')
             this.laucherTypeSelect.classList.toggle('active')
         })
@@ -185,6 +213,11 @@ export default class Filters {
 
         buttonSelectLaucherPlace.addEventListener('click', (_event) => {
             _event.preventDefault()
+
+            this.currentOpenned = 3
+
+            this.closeAll()
+
             buttonSelectLaucherPlace.classList.toggle('active')
             this.laucherPlaceSelect.classList.toggle('active')
         })
@@ -195,29 +228,14 @@ export default class Filters {
 
         buttonSelectMass.addEventListener('click', (_event) => {
             _event.preventDefault()
+
+            this.currentOpenned = 4
+
+            this.closeAll()
+
             buttonSelectMass.classList.toggle('active')
             this.massSelect.classList.toggle('active')
         })
-    }
-
-    clickCheckedOption = () => {
-        // const checkedOption = this.form.querySelectorAll('.checked__option')
-
-        // checkedOption.addEventListener('click', (_event) => {
-        //     _event.preventDefault()
-        //     checkedOption.classList.toggle('is-active')
-        //     console.log(checkedOption.classList);
-            
-        // })
-
-        // for (let check = 0; check < checkedOption.length; check++) {
-        //     const checkOption = checkedOption[check]
-        //     checkOption.addEventListener('click', () => {
-        //         _event.preventDefault()
-        //         checkedOption.classList.toggle('is-active')
-        //         console.log(checkedOption.classList);
-        //     })
-        // }
     }
 }
 

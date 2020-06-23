@@ -9,7 +9,6 @@ export default class Filters {
         this.laucherTypeSelect = this.element.querySelector('#js-select-laucher-type')
         this.laucherPlaceSelect = this.element.querySelector('#js-select-laucher-place')
         this.massSelect = this.element.querySelector('#js-select-mass')
-        this.clickcheckedOption = this.element.querySelectorAll('.checked__option')
         this.notSelectedOptions = []
         this.updateSatellites = updateSatellites
         this.currentOpenned = null

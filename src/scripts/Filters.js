@@ -52,7 +52,7 @@ export default class Filters {
         deleteFiltersButton.addEventListener('click', () => {
             this.notSelectedOptions = []
             this.applyFilters()
-
+            
             const optionsElements = this.form.querySelectorAll('.filters__select-input option')
 
             optionsElements.forEach(optionElement => {

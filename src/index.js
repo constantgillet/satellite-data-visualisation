@@ -22,10 +22,10 @@ const changeContent = (ElementIndex) => {
 
 for (let i = 0; i < partTitles.length; i++) {
     const partTitle = partTitles[i]
-    
+
     partTitle.addEventListener('click', (_event) => {
-        if (i != partTitles.length-1) {
-           _event.preventDefault() 
+        if (i != partTitles.length - 1) {
+            _event.preventDefault()
         }
         changeContent(i)
     })
@@ -44,7 +44,7 @@ const nextContent = () => {
 const previousContent = () => {
     let previousElementIndex
 
-    if(currentElementIndex > 0)
+    if (currentElementIndex > 0)
         previousElementIndex = currentElementIndex - 1
     else
         previousElementIndex = satelliteContents.length-1

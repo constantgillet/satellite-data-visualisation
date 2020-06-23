@@ -22,7 +22,6 @@ export default class Filters {
         this.clickMassSelect()
         this.clickButtonDeleteFilters()
         this.optionClick()
-        this.clickCheckedOption()
     }
 
     closeAll = () => {

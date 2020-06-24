@@ -35,9 +35,10 @@ form, button, input, li, ul, a, option:hover{
 }
 
 a{
-    background :linear-gradient(to top, rgba(0, 255, 255, 0.876) 0%, rgba(0, 255, 255, 0.876)4px,transparent 5px)no-repeat;
+    background :linear-gradient(to top, rgba(0, 255, 255, 0.876) 0%, rgba(0, 255, 255, 0.876)2px,transparent 3px)no-repeat;
     background-size:0 100%;
     transition: background-size .3s;
+    font-weight: 300;
 }
 
 a:hover{
@@ -242,6 +243,7 @@ main {
 
      &.is-active{
         opacity: 1;
+        transform: translateX(540px);
         transition-property: transform;
         transition-duration: 3s;
         transition-delay: 0s;

@@ -1,0 +1,58 @@
+.parts-content__countries {
+    font-weight: 300 !important;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__chart {
+        width: 768px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        position: relative;
+
+        &__title {
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-weight: 300;
+            font-size: 20px;
+            line-height: 23px;
+            text-transform: uppercase;
+        }
+
+        &__center-box {
+            width: 100%;
+            height: 300px;
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-end;
+        }
+    }
+
+    .countries-chart__country {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &__illustration {
+            margin: 20px 0;
+        }
+
+        &__satellite-number {
+            font-weight: 500;
+        }
+    }
+
+    &__text{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 489px;
+        height: 359px;
+        background: rgba(16, 105, 140, 0.08);
+        padding: 40px;
+        margin-left: 10px;
+        border: solid 2px rgba(77, 195, 204, 0.78);
+    }
+}

@@ -11,6 +11,10 @@ const partTitles = document.body.querySelectorAll('.parts-title')
 let currentElementIndex = 0
 
 const changeContent = (ElementIndex) => {
+    if (ElementIndex == satelliteContents.length) {
+        window.location.href = './map.html'
+    }
+
     satelliteContents[currentElementIndex].classList.remove('is-active')
     satelliteContents[ElementIndex].classList.add('is-active')
 
@@ -24,29 +28,38 @@ for (let i = 0; i < partTitles.length; i++) {
         if (i != partTitles.length - 1) {
             _event.preventDefault()
         }
-
         changeContent(i)
-
-
     })
 }
 
 nextButton.addEventListener('click', () => {
-    let nextElementIndex
-
-    if (currentElementIndex < satelliteContents.length - 1)
-        nextElementIndex = currentElementIndex + 1
-    else
-        nextElementIndex = 0
-    changeContent(nextElementIndex)
+    nextContent()
 })
 
-previousButton.addEventListener('click', () => {
+const nextContent = () => {
+    let nextElementIndex = currentElementIndex + 1
+
+    changeContent(nextElementIndex)
+}
+
+const previousContent = () => {
     let previousElementIndex
 
     if (currentElementIndex > 0)
         previousElementIndex = currentElementIndex - 1
     else
-        previousElementIndex = satelliteContents.length - 1
+        previousElementIndex = satelliteContents.length-1
     changeContent(previousElementIndex)
+}
+
+previousButton.addEventListener('click', () => {
+    previousContent()
+})
+
+window.addEventListener('keyup', (_event) => {
+    
+    if (_event.code == 'ArrowLeft') 
+        previousContent()
+    else if(_event.code == 'ArrowRight')
+        nextContent()
 })

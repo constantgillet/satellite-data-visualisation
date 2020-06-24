@@ -35,17 +35,6 @@ form, button, input, li, ul, a, option:hover{
   
 }
 
-a{
-    background :linear-gradient(to top, rgba(0, 255, 255, 0.876) 0%, rgba(0, 255, 255, 0.876)2px,transparent 3px)no-repeat;
-    background-size:0 100%;
-    transition: background-size .3s;
-    font-weight: 300;
-}
-
-a:hover{
-    background-size: 100% 100%;
-}
-
 h1 {
     font-style: normal;
     font-weight: 300;
@@ -177,6 +166,17 @@ main {
     align-items: center;
 }
 
+.parts-title {
+    background :linear-gradient(to top, rgba(0, 255, 255, 0.876) 0%, rgba(0, 255, 255, 0.876)2px,transparent 3px)no-repeat;
+    background-size:0 100%;
+    transition: background-size .3s;
+    font-weight: 300;
+
+    &:hover, &.is-active {
+        background-size: 100% 100%;
+    }
+}
+
 .map-link{
     margin-left: 20px;
     background: #10698C;
@@ -194,6 +194,7 @@ main {
     &:hover {
         background: #277999;
     }
+
 }
 
 .satellite-content{

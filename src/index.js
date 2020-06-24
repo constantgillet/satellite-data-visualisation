@@ -16,7 +16,12 @@ const changeContent = (ElementIndex) => {
     }
 
     satelliteContents[currentElementIndex].classList.remove('is-active')
+    satelliteContents[currentElementIndex].style.display = 'none'
     satelliteContents[ElementIndex].classList.add('is-active')
+    satelliteContents[ElementIndex].style.display = 'flex'
+
+    partTitles[currentElementIndex].classList.remove('is-active')
+    partTitles[ElementIndex].classList.add('is-active')
 
     currentElementIndex = ElementIndex
 }
@@ -63,3 +68,54 @@ window.addEventListener('keyup', (_event) => {
     else if(_event.code == 'ArrowRight')
         nextContent()
 })
+
+
+/**
+* Orbits class
+*/
+
+const lowOrbitNumber = document.body.querySelector('.earth-orbite-line__number__low')
+const mediumOrbitNumber = document.body.querySelector('.earth-orbite-line__number__medium')
+const hightOrbitNumber = document.body.querySelector('.earth-orbite-line__number__hight')
+
+const orbitNumbers = [lowOrbitNumber, mediumOrbitNumber, hightOrbitNumber]
+
+fetch(`${API_URL}/api/getOrbitClass.php`)
+.then(res => res.json())
+.then(data => {
+    console.log(data)
+    if (data.status == 'success') {
+        lowOrbitNumber.innerText = data.class_of_orbit.LEO
+        mediumOrbitNumber.innerText = data.class_of_orbit.MEO
+        hightOrbitNumber.innerText = data.class_of_orbit.GEO
+    }
+},
+(error) => {     
+    console.error(error)       
+})
+
+const satelliteIcons = document.body.querySelectorAll('.js-earth-orbite')
+const contentsOrbite = document.body.querySelectorAll('.content-orbite')
+
+for (let i = 0; i < satelliteIcons.length; i++) {
+    const satelliteIcon = satelliteIcons[i]
+    const orbitNumber = orbitNumbers[i]
+
+    console.log(orbitNumber)
+
+    satelliteIcon.addEventListener('mouseenter', () => { displayContent(i) })
+    orbitNumber.addEventListener('mouseenter', () => { displayContent(i) })
+
+    satelliteIcon.addEventListener('mouseleave', () => { hideContent(i) })
+    orbitNumber.addEventListener('mouseleave', () => { hideContent(i) })
+}
+
+
+
+const displayContent = (contentIndex) => {
+    contentsOrbite[contentIndex].classList.add('is-active')
+}
+
+const hideContent = (contentIndex) => {
+    contentsOrbite[contentIndex].classList.remove('is-active')
+}

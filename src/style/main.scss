@@ -11,7 +11,11 @@ $mainShadow: 1px 1px 6px #7FE7F1;
 @import './parts/disclamer.scss';
 @import './parts/orbite.scss';
 @import './parts/content-countries.scss';
+<<<<<<< HEAD
 @import './parts/history.scss';
+=======
+@import './parts/facts.scss';
+>>>>>>> 15d525896dc537e98e6615bec8e3c0b7f63f9b67
 
 body {
     font-family: 'Roboto';
@@ -34,17 +38,6 @@ h1, h2, h3, a, label, ul, li, p, option {
 form, button, input, li, ul, a, option:hover{
     cursor: url('/images/cursor1.png'), pointer;
   
-}
-
-a{
-    background :linear-gradient(to top, rgba(0, 255, 255, 0.876) 0%, rgba(0, 255, 255, 0.876)2px,transparent 3px)no-repeat;
-    background-size:0 100%;
-    transition: background-size .3s;
-    font-weight: 300;
-}
-
-a:hover{
-    background-size: 100% 100%;
 }
 
 h1 {
@@ -178,6 +171,17 @@ main {
     align-items: center;
 }
 
+.parts-title {
+    background :linear-gradient(to top, rgba(0, 255, 255, 0.876) 0%, rgba(0, 255, 255, 0.876)2px,transparent 3px)no-repeat;
+    background-size:0 100%;
+    transition: background-size .3s;
+    font-weight: 300;
+
+    &:hover, &.is-active {
+        background-size: 100% 100%;
+    }
+}
+
 .map-link{
     margin-left: 20px;
     background: #10698C;
@@ -195,6 +199,7 @@ main {
     &:hover {
         background: #277999;
     }
+
 }
 
 .satellite-content{

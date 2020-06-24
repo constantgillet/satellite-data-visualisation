@@ -9,6 +9,9 @@ $mainShadow: 1px 1px 6px #7FE7F1;
 @import './parts/filters.scss';
 @import './parts/webgl.scss';
 @import './parts/disclamer.scss';
+@import './parts/orbite.scss';
+@import './parts//content-countries.scss';
+@import './parts/history.scss';
 
 body {
     font-family: 'Roboto';
@@ -173,24 +176,24 @@ main {
     width: 800px;
     font-size: 24px;
     align-items: center;
+}
 
-    &__map-link{
-        margin-left: 20px;
-        background: #10698C;
-        border: 2px solid #4DC3CC;
-        box-sizing: border-box;
-        box-shadow: 0px 4px 9px rgba(127, 231, 241, 0.43);
-        border-radius: 2px 2px 2px 2px;
-        color: $primaryColor;
-        font-weight: 300;
-        font-size: 18px;
-        padding: 5px 7px;
-        text-transform: uppercase;
-        vertical-align: middle;
+.map-link{
+    margin-left: 20px;
+    background: #10698C;
+    border: 2px solid #4DC3CC;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 9px rgba(127, 231, 241, 0.43);
+    border-radius: 2px 2px 2px 2px;
+    color: $primaryColor;
+    font-weight: 300;
+    font-size: 18px;
+    padding: 5px 7px;
+    text-transform: uppercase;
+    vertical-align: middle;
 
-        &:hover {
-            background: #277999;
-        }
+    &:hover {
+        background: #277999;
     }
 }
 
@@ -205,18 +208,6 @@ main {
     &.is-active {
         opacity: 1;
     }
-
-    &__text{
-    
-    }
-
-    img{
-        position: absolute;
-        top: -10vh;
-        right: 50vw;
-    }
-
-}
 
 .parts-content{
     display: flex;
@@ -249,9 +240,8 @@ main {
 
     &__countries{
         display: flex;
-        justify-content: space-between;
-        flex-direction: row-reverse;
-        width: 80%;
+        justify-content: center;
+        width: 100%;
     }
 
     &__orbite{
@@ -293,5 +283,4 @@ main {
     }
 
 }
-
-
+}

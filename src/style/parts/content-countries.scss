@@ -58,6 +58,8 @@
     }
 }
 
+
+
 .countries-focus{
     position: absolute;
     width: 700px;
@@ -71,4 +73,11 @@
     padding: 10px;
     border: solid 2px rgba(77, 195, 204, 0.78);
     opacity: 0;
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.3s;
+    transition-property: opacity;
+}
+
+.countries-chart__country:hover .countries-focus {
+    opacity: 1;
 }

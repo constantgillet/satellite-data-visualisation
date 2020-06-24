@@ -10,6 +10,7 @@ $mainShadow: 1px 1px 6px #7FE7F1;
 @import './parts/webgl.scss';
 @import './parts/disclamer.scss';
 @import './parts/orbite.scss';
+@import './parts//content-countries.scss';
 
 body {
     font-family: 'Roboto';
@@ -207,17 +208,6 @@ main {
         opacity: 1;
     }
 
-    &__text{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 35%;
-        height: 80%;
-        background: rgba(16, 105, 140, 0.08);
-        padding: 40px;
-        border: solid 2px rgba(77, 195, 204, 0.78);
-    }
-
     &__orbite{
         position: absolute;
         width: 100%;
@@ -258,9 +248,8 @@ main {
 
     &__countries{
         display: flex;
-        justify-content: space-between;
-        flex-direction: row-reverse;
-        width: 80%;
+        justify-content: center;
+        width: 100%;
     }
 
     &__life-duration{

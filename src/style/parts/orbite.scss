@@ -7,11 +7,16 @@
 
     &__low{
         position: absolute;
-        width: 30px;
-        height: 30px;
-        bottom: 565px;
+        width: 40px;
+        height: 40px;
+        bottom: 553px;
         left: 600px;
         z-index: 2;
+    }
+
+    &__low:hover{
+        animation: animationSizeSatelite 3s ease-in;
+        cursor: url('/images/cursor1.png'), pointer;
     }
 
     &__medium{
@@ -23,13 +28,24 @@
         z-index: 2;
     }
 
+    &__medium:hover{
+        animation: animationSizeSatelite 3s ease-in;
+        cursor: url('/images/cursor1.png'), pointer;
+    }
+
+
     &__hight{
         position: absolute;
-        width: 40px;
-        height: 40px;
+        width: 45px;
+        height: 45px;
         bottom: 615px;
-        left: 1075px;
+        left: 1071px;
         z-index: 2;
+    }
+
+    &__hight:hover{
+        animation: animationSizeSatelite 3s ease-in;
+        cursor: url('/images/cursor1.png'), pointer;
     }
 }
 
@@ -129,6 +145,22 @@
         top: 325px;
         width: 300px;
         height: 100px;
+    }
+}
+
+@keyframes animationSizeSatelite{
+    0%{
+        transform: translateX(20px);
+    }
+    20%{
+        transform: translateX(-20px);
+    }
+    50%{
+        transform: scale(1.3);
+    }
+    100%{
+        transform: scale(1);
+        transform: translateY(0px);
     }
 }
 

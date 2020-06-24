@@ -40,6 +40,11 @@
             margin: 20px 0;
         }
 
+        &__illustration:hover{
+            animation: animationSize 3s ease-in;
+            cursor: url('/images/cursor1.png'), pointer;
+        }
+
         &__satellite-number {
             font-weight: 500;
         }
@@ -78,4 +83,16 @@
 
 .countries-chart__country:hover .countries-focus {
     opacity: 1;
+}
+
+@keyframes animationSize{
+    0% {
+        opacity: 0.75;
+      }
+      25%{
+        transform: scale(1.1);
+      }
+      100% {
+        transform: scale(1);
+      }
 }

@@ -2,9 +2,11 @@
     position: absolute;
     left: 268px;
     top: 28px;
-    font-size: 20px;
+    font-size: 1.25em;
     font-weight: 300;
     line-height: 25px;
+    animation: aparitionDate 1100s 3s ease-in-out;
+    opacity: 0;
 }
 
 
@@ -12,8 +14,10 @@
     position: absolute;
     left: 636px;
     top: 30px;
-    font-size: 20px;
+    font-size: 1.25em;
     font-weight: 300;
+    animation: aparitionDate 1100s 5s ease-in-out;
+    opacity: 0;
 }
 
 
@@ -21,46 +25,56 @@
     position: absolute;
     left: 922px;
     top: 118px;
-    width: 615px;
-    font-size: 20px;
+    width: 50%;
+    font-size: 1.25em;
     font-weight: 300;
+    animation: aparitionDate 1100s 6s ease-in-out;
+    opacity: 0;
 }
 
 .satellite-content__text__communication{
     position: absolute;
     left: 951px;
     top: 183px;
-    width: 521px;
-    font-size: 20px;
+    width: 50%;
+    font-size:1.25em;
     font-weight: 300;
+    animation: aparitionDate 1100s 7s ease-in-out;
+    opacity: 0;
 }
 
 .satellite-content__text__explore{
     position: absolute;
     left: 929px;
-    top: 262px;
-    width: 499px;
-    font-size: 20px;
+    top: 267px;
+    width: 50%;
+    font-size: 1.25em;
     font-weight: 300;
     line-height: 25px;
+    animation: aparitionDate 1100s 8s ease-in-out;
+    opacity: 0;
 }
 
 .satellite-content__text__recognition{
     position: absolute;
     left: 829px;
     top: 355px;
-    width: 499px;
-    font-size: 20px;
+    width: 50%;
+    font-size: 1.25em;
     font-weight: 300;
+    animation: aparitionDate 1100s 9s ease-in-out;
+    opacity: 0;
 }
 
 .satellite-content__text__observation{
     position: absolute;
     left: 732px;
     top: 419px;
-    width: 499px;
-    font-size: 20px;
+    width: 50%;
+    font-size: 1.25em;
     font-weight: 300;
+    animation: aparitionDate 1100s 10s ease-in-out;
+    opacity: 0;
 }
 
 
@@ -68,9 +82,11 @@
     position: absolute;
     left: 606px;
     top: 483px;
-    width: 499px;
-    font-size: 20px;
+    width: 50%;
+    font-size: 1.25em;
     font-weight: 300;
+    animation: aparitionDate 1100s 11s ease-in-out;
+    opacity: 0;
 }
 
 .satellite-content__text__1957{
@@ -79,7 +95,7 @@
     top: 97px;
     font-size: 28px;
 }
-
+ 
 
 .satellite-content__text__1958{
     position: absolute;
@@ -138,6 +154,13 @@
     height: auto;
     left: 0px;
     bottom: -77px;
-        
-       
     }
+
+@keyframes aparitionDate {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 1;
+    }
+}

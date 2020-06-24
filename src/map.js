@@ -25,7 +25,7 @@ fetch(`${API_URL}/api/getAllSatellites.php`)
 .then(res => res.json())
 .then(data => {
     satellites = data
-    console.log(data[0])
+    //console.log(data[0])
 
     //On applique les mets sur les filtres
     const filters = new Filters(document.querySelector('.filters'), satellites, updateSatellites)

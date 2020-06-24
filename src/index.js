@@ -87,7 +87,7 @@ const orbitNumbers = [lowOrbitNumber, mediumOrbitNumber, hightOrbitNumber]
 fetch(`${API_URL}/api/getOrbitClass.php`)
 .then(res => res.json())
 .then(data => {
-    console.log(data)
+    //console.log(data)
     if (data.status == 'success') {
         lowOrbitNumber.innerText = data.class_of_orbit.LEO
         mediumOrbitNumber.innerText = data.class_of_orbit.MEO
@@ -128,9 +128,6 @@ const hideContent = (contentIndex) => {
 
 const factTextList = document.body.querySelectorAll('.js-fact-text')
 const factImageList = document.body.querySelectorAll('.js-fact-image')
-
-console.log(factImageList)
-console.log(factTextList)
 
 for (let i = 0; i < factImageList.length; i++) {
     const factImage = factImageList[i]

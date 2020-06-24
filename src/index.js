@@ -17,8 +17,12 @@ const changeContent = (ElementIndex) => {
 
     satelliteContents[currentElementIndex].classList.remove('is-active')
     satelliteContents[currentElementIndex].style.display = 'none'
-    satelliteContents[ElementIndex].classList.add('is-active')
     satelliteContents[ElementIndex].style.display = 'flex'
+
+    window.requestAnimationFrame(() => {
+        satelliteContents[ElementIndex].classList.add('is-active')
+    })
+    
 
     partTitles[currentElementIndex].classList.remove('is-active')
     partTitles[ElementIndex].classList.add('is-active')
@@ -100,8 +104,6 @@ const contentsOrbite = document.body.querySelectorAll('.content-orbite')
 for (let i = 0; i < satelliteIcons.length; i++) {
     const satelliteIcon = satelliteIcons[i]
     const orbitNumber = orbitNumbers[i]
-
-    console.log(orbitNumber)
 
     satelliteIcon.addEventListener('mouseenter', () => { displayContent(i) })
     orbitNumber.addEventListener('mouseenter', () => { displayContent(i) })

@@ -206,10 +206,24 @@ main {
     top: 20%;
     left: 0;
     opacity: 0;
+    transform: translateX(0%);
+    transition-property: opacity;
+    transition-duration: 1s;
+    transition-delay: 0s;
 
     &.is-active {
         opacity: 1;
     }
+
+    &.animate-to-right {
+        transform: translateX(200%);
+    }
+
+
+    &.animate-to-left {
+        transform: translateX(-200%);
+    }
+
 
     &__orbite{
         position: absolute;

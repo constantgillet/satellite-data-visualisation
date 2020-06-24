@@ -119,3 +119,29 @@ const displayContent = (contentIndex) => {
 const hideContent = (contentIndex) => {
     contentsOrbite[contentIndex].classList.remove('is-active')
 }
+
+/**
+* FACTS PART
+*/
+
+const factTextList = document.body.querySelectorAll('.js-fact-text')
+const factImageList = document.body.querySelectorAll('.js-fact-image')
+
+console.log(factImageList)
+console.log(factTextList)
+
+for (let i = 0; i < factImageList.length; i++) {
+    const factImage = factImageList[i]
+
+    factImage.addEventListener('mouseenter', () => { displayFact(i) })
+
+    factImage.addEventListener('mouseleave', () => { hideFact(i) })
+}
+
+const displayFact = (factIndex) => {
+    factTextList[factIndex].classList.add('is-active')
+}
+
+const hideFact = (factIndex) => {
+    factTextList[factIndex].classList.remove('is-active')
+}

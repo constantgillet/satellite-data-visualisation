@@ -9,6 +9,7 @@ $mainShadow: 1px 1px 6px #7FE7F1;
 @import './parts/filters.scss';
 @import './parts/webgl.scss';
 @import './parts/disclamer.scss';
+@import './parts/orbite.scss';
 
 body {
     font-family: 'Roboto';
@@ -198,7 +199,7 @@ main {
     width: 100%;
     height: 70%;
     top: 20%;
-    left: 10%;
+    left: 0;
     opacity: 0;
 
     &.is-active {
@@ -216,6 +217,13 @@ main {
         border: solid 2px rgba(77, 195, 204, 0.78);
     }
 
+    &__orbite{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        bottom: 0;
+        left: 0;
+    }
 }
 
 .parts-content{
@@ -250,12 +258,6 @@ main {
         display: flex;
         justify-content: space-between;
         flex-direction: row-reverse;
-        width: 80%;
-    }
-
-    &__orbite{
-        display: flex;
-        justify-content: space-between;
         width: 80%;
     }
 

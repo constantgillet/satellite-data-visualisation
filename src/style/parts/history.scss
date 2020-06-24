@@ -5,8 +5,14 @@
     font-size: 1.25em;
     font-weight: 300;
     line-height: 25px;
-    animation: aparitionDate 1100s 1s ease-in-out;
     opacity: 0;
+    animation-name: apparitionDate;
+    animation-duration: 0.4s;
+    animation-delay: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
+    
+
 }
 
 
@@ -16,8 +22,12 @@
     top: 30px;
     font-size: 1.25em;
     font-weight: 300;
-    animation: aparitionDate 1100s 2s ease-in-out;
     opacity: 0;
+    animation-name: apparitionDate;
+    animation-duration: 0.3s;
+    animation-delay: 1s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
 }
 
 
@@ -28,8 +38,12 @@
     width: 50%;
     font-size: 1.25em;
     font-weight: 300;
-    animation: aparitionDate 1100s 3s ease-in-out;
     opacity: 0;
+    animation-name: apparitionDate;
+    animation-duration: 0.3s;
+    animation-delay: 1.5s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
 }
 
 .satellite-content__text__communication{
@@ -39,8 +53,12 @@
     width: 50%;
     font-size:1.25em;
     font-weight: 300;
-    animation: aparitionDate 1100s 4s ease-in-out;
     opacity: 0;
+    animation-name: apparitionDate;
+    animation-duration: 0.3s;
+    animation-delay: 2s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
 }
 
 .satellite-content__text__explore{
@@ -51,8 +69,12 @@
     font-size: 1.25em;
     font-weight: 300;
     line-height: 25px;
-    animation: aparitionDate 1100s 5s ease-in-out;
     opacity: 0;
+    animation-name: apparitionDate;
+    animation-duration: 0.3s;
+    animation-delay: 2.5s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
 }
 
 .satellite-content__text__recognition{
@@ -62,8 +84,12 @@
     width: 50%;
     font-size: 1.25em;
     font-weight: 300;
-    animation: aparitionDate 1100s 6s ease-in-out;
     opacity: 0;
+    animation-name: apparitionDate;
+    animation-duration: 0.3s;
+    animation-delay: 3s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
 }
 
 .satellite-content__text__observation{
@@ -73,8 +99,12 @@
     width: 50%;
     font-size: 1.25em;
     font-weight: 300;
-    animation: aparitionDate 1100s 7s ease-in-out;
     opacity: 0;
+    animation-name: apparitionDate;
+    animation-duration: 0.3s;
+    animation-delay: 3.5s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
 }
 
 
@@ -85,8 +115,12 @@
     width: 50%;
     font-size: 1.25em;
     font-weight: 300;
-    animation: aparitionDate 1100s 8s ease-in-out;
     opacity: 0;
+    animation-name: apparitionDate;
+    animation-duration: 0.3s;
+    animation-delay: 4s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
 }
 
 .satellite-content__text__1957{
@@ -156,9 +190,9 @@
     bottom: -77px;
     }
 
-@keyframes aparitionDate {
+@keyframes apparitionDate {
     0%{
-        opacity: 1;
+        opacity: 0;
     }
     100%{
         opacity: 1;

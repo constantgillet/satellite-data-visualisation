@@ -84,7 +84,7 @@ export default class Filters {
                     } 
                     i++
                 })
-                console.log(this.notSelectedOptions)
+                //console.log(this.notSelectedOptions)
                 this.applyFilters()
             })
         }
@@ -142,7 +142,7 @@ export default class Filters {
             }
         })
 
-        console.log(newSatellites.length)
+        //console.log(newSatellites.length)
         this.updateSatellites(newSatellites)
     }
 

@@ -63,3 +63,26 @@ window.addEventListener('keyup', (_event) => {
     else if(_event.code == 'ArrowRight')
         nextContent()
 })
+
+
+/**
+* Orbits class
+*/
+
+const lowOrbitNumber = document.body.querySelector('.earth-orbite-line__number__low')
+const mediumOrbitNumber = document.body.querySelector('.earth-orbite-line__number__medium')
+const hightOrbitNumber = document.body.querySelector('.earth-orbite-line__number__hight')
+
+fetch(`${API_URL}/api/getOrbitClass.php`)
+.then(res => res.json())
+.then(data => {
+    console.log(data)
+    if (data.status == 'success') {
+        lowOrbitNumber.innerText = data.class_of_orbit.LEO
+        mediumOrbitNumber.innerText = data.class_of_orbit.MEO
+        hightOrbitNumber.innerText = data.class_of_orbit.GEO
+    }
+},
+(error) => {     
+    console.error(error)       
+})

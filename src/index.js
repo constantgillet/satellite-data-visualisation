@@ -119,8 +119,6 @@ const displayContent = (contentIndex) => {
 const hideContent = (contentIndex) => {
     contentsOrbite[contentIndex].classList.remove('is-active')
 }
-<<<<<<< HEAD
-=======
 
 /**
 * FACTS PART
@@ -147,4 +145,3 @@ const displayFact = (factIndex) => {
 const hideFact = (factIndex) => {
     factTextList[factIndex].classList.remove('is-active')
 }
->>>>>>> c0748562cb90eee83c56e379818aab42291a1ba2

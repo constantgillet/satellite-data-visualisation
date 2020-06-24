@@ -36,6 +36,7 @@
         align-items: center;
 
         &__illustration {
+            position: relative;
             margin: 20px 0;
         }
 
@@ -55,4 +56,19 @@
         margin-left: 10px;
         border: solid 2px rgba(77, 195, 204, 0.78);
     }
+}
+
+.countries-focus{
+    position: absolute;
+    width: 700px;
+    height: 100px;
+    left: 20px;
+    bottom: -50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(16, 105, 140, 0.08);
+    padding: 10px;
+    border: solid 2px rgba(77, 195, 204, 0.78);
+    opacity: 0;
 }
